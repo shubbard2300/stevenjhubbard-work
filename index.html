@@ -303,6 +303,12 @@ figcaption{
 }
 .prose{color:var(--ink-2);max-width:68ch;font-size:16.5px}
 .prose p+p{margin-top:1.05em}
+.prose h4{
+  margin:1.9em 0 .5em;font-family:var(--mono);font-size:10.5px;font-weight:400;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
+}
+.prose h4:first-child{margin-top:0}
+.prose h4+ul{margin-top:0}
 .prose ul{margin:1.15em 0 0;padding-left:0;list-style:none;display:grid;gap:10px}
 .prose li{position:relative;padding-left:22px}
 .prose li::before{
@@ -401,7 +407,7 @@ figcaption{
       <h3>MEND Medical Wear</h3>
       <p class="entry-role"><b>Founder, Architect &amp; Developer</b> &middot; 2026 &ndash; Present</p>
     </div>
-    <p class="lede">Recovery apparel and connected-care, built end to end &mdash; positioning, identity, storefront, seven product pages, and a React assessment tool, all of it mine.</p>
+    <p class="lede">An ecommerce storefront for recovery apparel and connected care &mdash; washable hospital gowns, residential nurse scrubs, compression socks, and the AirGuard&trade; fall-detection collar.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -414,14 +420,22 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Soft washable recovery gowns, residential nurse scrubs, medical-grade compression socks, the AirGuard&trade; fall-detection collar, and the connected devices around them &mdash; a brand aimed at patients and at the people caring for them. I own every layer: the positioning, the identity, the product pages, the storefront architecture, and the code.</p>
-      <p>The storefront is hand-written static HTML, CSS, and JavaScript on Vercel. No framework, no build step for the site proper. That is a deliberate architectural call rather than a shortcut &mdash; a catalogue this size does not need a bundler, and skipping one buys near-instant loads and a site that will still build in five years without a dependency archaeology dig.</p>
-      <p>The exception is the <strong>fall-risk assessment tool</strong>, the site&rsquo;s lead magnet: a React application scoring fall risk against WHO data, with charts and a regional model. It runs through hand-written React shims rather than a bundler, so one interactive tool did not drag a toolchain onto the whole project.</p>
+      <h4>Discovery</h4>
+      <p>I started with the category rather than the product. Every competitor photographs folded fabric on white; nobody photographs the person wearing it, which sells nothing to somebody facing a week in hospital. That audit set three things: the positioning, the two buyer segments &mdash; patients and the people caring for them &mdash; and the decision to lead acquisition with a free fall-risk assessment instead of a discount code.</p>
+      <h4>Architecture</h4>
+      <p>Static-first, deliberately. Hand-written HTML, CSS, and JavaScript on Vercel, with no bundler and no framework for the storefront proper. A catalogue this size does not need a build step, and skipping one buys near-instant loads and a site that will still build in five years without a dependency archaeology dig. The one genuinely interactive tool runs on hand-written React shims so it could not drag a toolchain onto everything else.</p>
+      <h4>Design</h4>
+      <p>Brand identity, palette, and typography, then the photographic direction &mdash; patients and caregivers in real light rather than product flat-lays &mdash; and a product-page template that had to carry seven very different SKUs, from a cotton gown to a wearable sensor.</p>
+      <h4>Development</h4>
+      <p>Every line is mine: the storefront, seven product detail pages, and the React fall-risk assessment that scores against WHO fall data with charts and a regional model.</p>
+      <h4>Integrations &amp; APIs</h4>
+      <p>The assessment posts to a serverless lead-capture endpoint. Alongside it, a full technical SEO program &mdash; www unification, clean product slugs, an image pipeline, security headers, sitemap and robots.</p>
+      <h4>Delivered</h4>
       <ul>
+        <li>Brand positioning, identity, and photographic direction from scratch</li>
         <li>Seven product detail pages &mdash; gowns, scrubs, compression socks, the AirGuard&trade; collar, MEND Pulse, MEND Oxi, and the MEND app</li>
         <li>React fall-risk assessment built on WHO fall data, wired to a serverless lead-capture endpoint</li>
-        <li>Full technical SEO program: www unification, clean product slugs, an image pipeline, security headers, sitemap and robots</li>
-        <li>Static-first architecture &mdash; no build step for the storefront, no framework lock-in</li>
+        <li>Technical SEO program and a static-first architecture with no framework lock-in</li>
       </ul>
     </div>
     <div class="aside rv">
@@ -444,7 +458,7 @@ figcaption{
       <h3>Steven Hubbard LLC</h3>
       <p class="entry-role"><b>Independent Consultant &amp; Solutions Architect</b> &middot; Feb 2000 &ndash; Present</p>
     </div>
-    <p class="lede">The consultancy, and the site that sells it. Client engagements owned end to end &mdash; current-state assessment through hands-on delivery.</p>
+    <p class="lede">The consultancy&rsquo;s own site &mdash; what the practice does, who it has done it for, and how an engagement runs.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -457,12 +471,21 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Independent practice. I own solution architecture end to end on client engagements: current-state assessment, target-state design, data modeling, integration strategy, feasibility review, and the hands-on delivery afterward &mdash; which is the part that keeps the architecture honest.</p>
-      <p>The through-line across clients is integration. Most organizations do not have a technology problem so much as four systems that each believe they are the source of truth. The work is finding that seam and closing it, then writing it down clearly enough that the client&rsquo;s own team can extend it without me.</p>
+      <h4>Discovery</h4>
+      <p>Every engagement opens the same way: current-state assessment. What systems exist, which of them believe they are the source of truth, and where the seams are. Most organizations do not have a technology problem so much as four systems that each believe they own the customer. Finding that seam is the billable part; closing it is the easy part.</p>
+      <h4>Architecture</h4>
+      <p>Target-state design, data modeling, integration strategy, and feasibility review &mdash; documented as technical context diagrams and as-is/to-be architecture so business and technical stakeholders align <em>before</em> the build rather than during it.</p>
+      <h4>Design</h4>
+      <p>This site and its apex parent are one design system deployed twice: a drafting-sheet identity, a single type scale, and an accent colour that tracks the visitor&rsquo;s local clock. Hand-written, no framework, same reasoning I bring to client work.</p>
+      <h4>Development</h4>
+      <p>I stay on the tools through delivery, which is the part that keeps the architecture honest &mdash; an architect who does not build ships diagrams that cannot be built. Handover includes solution architecture documentation, integration specifications, and reusable design patterns, so the client&rsquo;s team can extend the work without me.</p>
+      <h4>Integrations &amp; APIs</h4>
+      <p>Multi-system event-driven integration automating project intake and ticket routing across Workfront, Slack, and Salesforce over REST; ERP and commerce data consolidated into Snowflake as a governed executive reporting layer, replacing spreadsheet reconciliation.</p>
+      <h4>Outcomes</h4>
       <ul>
-        <li>Multi-system event-driven integration automating project intake and ticket routing across Workfront, Slack, and Salesforce via REST &mdash; roughly <strong>40% less triage handoff time</strong></li>
-        <li>Client reporting pipelines consolidating ERP and commerce data into Snowflake, replacing spreadsheet reconciliation with a governed executive reporting layer</li>
-        <li>Solution architecture documentation, integration specifications, and reusable design patterns handed over so client teams can maintain the work independently</li>
+        <li>Roughly <strong>40% less triage handoff time</strong> from the Workfront&ndash;Slack&ndash;Salesforce integration</li>
+        <li>Spreadsheet reconciliation replaced by a governed Snowflake reporting layer</li>
+        <li>Architecture documentation and reusable patterns handed over for independent maintenance</li>
       </ul>
     </div>
     <div class="aside rv">
@@ -485,7 +508,7 @@ figcaption{
       <h3>Eye Appeal Inc.</h3>
       <p class="entry-role"><b>Senior Architect &amp; Developer</b> &middot; Mar 2025 &ndash; Feb 2026</p>
     </div>
-    <p class="lede">A collectible grading platform for sports card collectors &mdash; an AI-scored reveal game, a proprietary grading metric, and a registry deep enough to be trusted as a system of record.</p>
+    <p class="lede">A collectible-grading platform for sports card collectors: an AI-scored reveal game, a proprietary grading metric, and a public registry.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -498,12 +521,21 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Three things had to work together, and each one undermined the others if built carelessly: an AI-powered <strong>Rate-to-Reveal</strong> game, the proprietary <strong>EyeQ+</strong> scoring metric, and a global registry that collectors would trust as a system of record. A grading platform lives or dies on whether people believe the number.</p>
-      <p>I architected the API integrations and workflow pipelines connecting internal systems to third-party platforms. Each one was designed as a reusable pattern rather than a one-off, which is the difference between the second integration taking days and taking weeks.</p>
+      <h4>Discovery</h4>
+      <p>Three things had to work together, and each one undermined the others if built carelessly: an AI-powered <strong>Rate-to-Reveal</strong> game, the proprietary <strong>EyeQ+</strong> scoring metric, and a global registry collectors would trust as a system of record. A grading platform lives or dies on whether people believe the number, so the discovery work was mostly about where that trust comes from and what would spend it.</p>
+      <h4>Architecture</h4>
+      <p>Cloud-hosted SvelteKit on Vercel. I architected the API integrations and workflow pipelines connecting internal systems to third-party platforms, each one designed as a reusable pattern rather than a one-off &mdash; that is the difference between the second integration taking days and taking weeks.</p>
+      <h4>Design</h4>
+      <p>The hero carries the entire product thesis in two buttons, <em>Blur My Card</em> and <em>Play Rate-To-Reveal</em>: grading as a game you play rather than a report you receive. The registry navigation sitting behind them does the credibility work.</p>
+      <h4>Development</h4>
+      <p>SvelteKit and TypeScript throughout, released to production weekly with zero downtime on two-week Agile iterations, with automated QA and data validation folded into the delivery pipeline rather than bolted on at the end.</p>
+      <h4>Integrations &amp; APIs</h4>
+      <p>AI scoring services, third-party collectibles platforms, and the workflow pipelines carrying data between them and internal systems.</p>
+      <h4>Outcomes</h4>
       <ul>
-        <li>Cloud-hosted SvelteKit application on Vercel at <strong>Lighthouse 95+</strong> with sub-second load times</li>
-        <li>Zero-downtime weekly production releases on two-week Agile iterations</li>
-        <li>Automated QA and data-validation folded into the delivery pipeline &mdash; <strong>30% less manual development effort</strong></li>
+        <li><strong>Lighthouse 95+</strong> with sub-second load times in production</li>
+        <li>Zero-downtime weekly releases on two-week Agile iterations</li>
+        <li><strong>30% less manual development effort</strong> from automated QA and data validation in the pipeline</li>
       </ul>
     </div>
     <div class="aside rv">
@@ -526,7 +558,7 @@ figcaption{
       <h3>Horizon Media</h3>
       <p class="entry-role"><b>Web Director &amp; Solutions Architect</b> &middot; Oct 2024 &ndash; Dec 2025</p>
     </div>
-    <p class="lede">Enterprise web architecture for the largest independent media agency in the US &mdash; and the internal architecture authority across its AEM and WordPress estate.</p>
+    <p class="lede">The corporate site and wider digital estate of the largest independent media agency in the US, plus the client platforms it runs.</p>
   </div>
   <figure>
     <div class="bleed">
@@ -545,14 +577,20 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>I led enterprise web architecture, AI-driven analytics, and performance work for major clients including <strong>United Healthcare</strong>, improving performance, accessibility, and engagement across their digital platforms. Healthcare is where accessibility stops being a checklist item and starts being the product.</p>
-      <p>The larger job was internal. I served as the architecture authority across the organization&rsquo;s AEM and WordPress ecosystems &mdash; governance standards, design patterns, component libraries, and the performance and security benchmarks every property was held to. That work is invisible when it goes well, which is the point.</p>
-      <p>Underneath it, the NetSuite&ndash;AEM ERP integration unified billing, content, and financial reporting data across on-premise and cloud systems, and Snowflake became the governed reporting layer for cross-platform campaign and financial data. Both replaced processes that had previously run on spreadsheets and trust.</p>
+      <h4>Discovery</h4>
+      <p>Two jobs running in parallel. Client-facing: performance, accessibility, and engagement audits across major brands including <strong>United Healthcare</strong> &mdash; healthcare is where accessibility stops being a checklist item and starts being the product. Internal: an inventory of the agency&rsquo;s AEM and WordPress estate to find where properties had drifted apart and what that drift was costing.</p>
+      <h4>Architecture</h4>
+      <p>I served as the architecture authority across both ecosystems &mdash; governance standards, design patterns, component libraries, and the performance and security benchmarks every property was held to. Architecture options, risk assessments, and roadmap tradeoffs went to executive stakeholders to drive platform investment decisions. That work is invisible when it goes well, which is the point.</p>
+      <h4>Development</h4>
+      <p>WordPress systems refactored for speed and engagement, developer workflows and release process streamlined across teams, and AI-driven analytics wired into campaign reporting.</p>
+      <h4>Integrations &amp; APIs</h4>
+      <p>The NetSuite&ndash;AEM ERP integration unified billing, content, and financial reporting data across on-premise and cloud systems. EDI and CRM integrations followed on the same backbone, and Snowflake became the governed data-warehouse reporting layer for cross-platform campaign and financial data. Both replaced processes that had previously run on spreadsheets and trust.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li>AI-driven analytics integration &mdash; <strong>campaign precision up 15%</strong></li>
         <li>WordPress systems refactored for <strong>25% more speed and engagement</strong></li>
         <li>Developer workflows streamlined for <strong>35% better efficiency</strong></li>
-        <li>Architecture options, risk assessments, and roadmap tradeoffs presented to executive stakeholders to drive platform investment decisions</li>
+        <li>API-driven data pipelines cutting manual processes by <strong>40%</strong></li>
       </ul>
     </div>
     <div class="aside rv">
@@ -574,7 +612,7 @@ figcaption{
       <h3>Coup D&rsquo;Etat</h3>
       <p class="entry-role"><b>Senior Architect &amp; Developer</b> &middot; Contract &middot; Jan 2019 &ndash; Mar 2025</p>
     </div>
-    <p class="lede">Six years with one client &mdash; long enough to stop shipping features and start shipping the standards everything else got built against.</p>
+    <p class="lede">The ecommerce site for a San Francisco luxury design showroom, where the photography is the catalogue.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -587,14 +625,20 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>A San Francisco luxury design showroom, and the longest single engagement of my career. Six years in, the useful work stopped being features and became standards: I established the architectural, security, and performance benchmarks adopted across all client engagements, and built the Storybook component library the team worked from.</p>
-      <p>I led platform discovery and requirements sessions with business and technical stakeholders, producing technical context diagrams and as-is/to-be architecture to align people <em>before</em> the build rather than during it. Alongside that, I supported multiple concurrent Agile delivery teams through sprint planning, code review, and enforcement of the quality metrics.</p>
-      <p>On the storefront: a custom WooCommerce module, a bespoke gallery experience for a catalogue where the photography <em>is</em> the product, and optimization driven by analytics rather than opinion.</p>
+      <h4>Discovery</h4>
+      <p>I led platform discovery and requirements sessions with business and technical stakeholders, producing technical context diagrams and as-is/to-be architecture to align people <em>before</em> the build rather than during it. Six years in, the useful discovery stopped being &ldquo;what should this feature do&rdquo; and became &ldquo;why do four of our properties solve this differently.&rdquo;</p>
+      <h4>Architecture</h4>
+      <p>I established the architectural, security, and performance benchmarks that were then adopted across all client engagements, and diagnosed the WordPress platform issues underneath the recurring symptoms &mdash; downtime and load time were the visible part of a structural problem.</p>
+      <h4>Design</h4>
+      <p>A bespoke gallery experience built with the design and marketing stakeholders, for a catalogue where the photography <em>is</em> the product, plus product displays streamlined around what analytics said people actually did rather than what the room assumed.</p>
+      <h4>Development</h4>
+      <p>A custom WooCommerce module, a React interface layer, and the Storybook component library the whole team worked from &mdash; which also let stakeholders sign off components before production. Alongside the build I supported multiple concurrent Agile delivery teams through sprint planning, code review, and enforcement of the quality metrics, and ran multi-channel A/B testing across email and landing pages.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li><strong>40% increase in online sales efficiency</strong> from the custom WooCommerce module</li>
-        <li><strong>20% lift in CTAs</strong> from streamlined product displays</li>
+        <li><strong>20% lift in completed CTAs</strong> from streamlined product displays</li>
         <li><strong>35% better engagement and 20% lower bounce</strong>, guided by Google Analytics</li>
-        <li><strong>30% shorter deployment cycles</strong> from the Storybook library, which also enabled pre-production stakeholder sign-off</li>
+        <li><strong>30% shorter deployment cycles</strong> from the Storybook library, plus <strong>30% less downtime</strong> after the CMS remediation</li>
       </ul>
     </div>
     <div class="aside rv">
@@ -617,7 +661,7 @@ figcaption{
       <h3>Lexmark</h3>
       <p class="entry-role"><b>Front-End AEM Developer &amp; Magento Architect</b> &middot; Oct 2022 &ndash; Mar 2023</p>
     </div>
-    <p class="lede">Making AEM and Magento share a customer without either one noticing &mdash; content from one, inventory and cart from the other, no visible seam.</p>
+    <p class="lede">Lexmark&rsquo;s global site: AEM-managed content sitting in front of a Magento store selling printers and toner subscriptions.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -630,8 +674,17 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Adobe Experience Manager and Magento are both entirely convinced they own the customer experience. The integration &mdash; built as custom plugins &mdash; let AEM handle content and Magento handle inventory and cart, without the seam showing to anyone actually shopping.</p>
-      <p>I also rebuilt the Magento 2.4 subscription module to offer custom toner colour options, which sounds small and was not: toner subscriptions are the business model, and the configuration matrix behind that dropdown is where the complexity lives. React components fetch real-time printer information via API alongside it, and I built custom AEM components against existing wireframes.</p>
+      <h4>Discovery</h4>
+      <p>Adobe Experience Manager and Magento are both entirely convinced they own the customer experience. The engagement opened by mapping which system should own what &mdash; content in AEM, inventory and cart in Magento &mdash; and where the seam between them would become visible to someone actually shopping.</p>
+      <h4>Architecture</h4>
+      <p>Custom plugins bridging the two platforms, so a single purchase journey crosses systems without the handoff showing. Designed so content editors kept working in AEM and merchandisers kept working in Magento, neither aware of the other.</p>
+      <h4>Design</h4>
+      <p>Custom AEM components built against the existing wireframes, and a rework of the subscription configuration UI &mdash; the toner-colour selector is the front door to the business model, and it had to make a large configuration matrix feel like a dropdown.</p>
+      <h4>Development</h4>
+      <p>I rebuilt the Magento 2.4 subscription module to offer custom toner colour options, which sounds small and was not: toner subscriptions <em>are</em> the business model, and the configuration matrix behind that dropdown is where the complexity lives. CMS components were refactored and performance-tuned for load time, and automated QA regression coverage went in behind the release.</p>
+      <h4>Integrations &amp; APIs</h4>
+      <p>The AEM&ndash;Magento integration itself, plus REST calls inside React components fetching real-time printer information, with state management driving automatic content updates on the page.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li><strong>30% increase in user engagement</strong> and a <strong>15% higher conversion rate</strong> from the AEM&ndash;Magento integration</li>
         <li><strong>35% faster page loads</strong> from refactored CMS components, feeding a 20% gain in satisfaction scores</li>
@@ -658,7 +711,7 @@ figcaption{
       <h3>TiVo</h3>
       <p class="entry-role"><b>Senior Ecommerce Architect</b> &middot; Dec 2020 &ndash; May 2022</p>
     </div>
-    <p class="lede">The Magento Enterprise 2.4 migration was the visible half. The harder half was WebMethods, ERP, and getting POS, order, and product data to agree with each other.</p>
+    <p class="lede">TiVo&rsquo;s direct-to-consumer store &mdash; hardware, accessories, and subscription service, sold alongside the marketing site.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -671,12 +724,19 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>I spearheaded the transition to Magento Enterprise 2.4 &mdash; stakeholder coordination, timeline management, and a migration that landed without drama. That was the part the business could see.</p>
-      <p>Underneath it: WebMethods and ERP integrations in Java and SOAP/XML against SQL Server, unifying POS, order, and product data across commerce and content systems while legacy on-premise CMS platforms moved to cloud-hosted WordPress, Magento, and AEM. POS and transaction data fed Snowflake to drive segmentation modelling in Salesforce Commerce Cloud &mdash; better targeting precision, less audience overlap between campaigns that had previously been competing for the same person.</p>
+      <h4>Discovery</h4>
+      <p>A legacy estate that had grown by accumulation: on-premise CMS platforms, several separate payment processors, and POS, order, and product data that did not agree with each other. The current-state assessment came before the migration plan, because the migration was never the actual problem.</p>
+      <h4>Architecture</h4>
+      <p>I designed and spearheaded the transition to Magento Enterprise 2.4, and the move of legacy on-premise CMS platforms onto cloud-hosted WordPress, Magento, and AEM &mdash; including stakeholder coordination and timeline management. That was the half the business could see. I also designed the workflow components that replaced several legacy systems outright.</p>
+      <h4>Development</h4>
+      <p>Java solutions against SQL Server, personalization and segmentation logic in Salesforce Commerce Cloud, and SQL Server performance tuning that cut query response times and improved reporting accuracy.</p>
+      <h4>Integrations &amp; APIs</h4>
+      <p>The harder half. WebMethods and ERP integrations in Java and SOAP/XML unified POS, order, and product data across commerce and content systems, carrying EDI, CRM, and data-warehouse exchanges on the same backbone. POS and transaction data fed Snowflake to drive segmentation modelling in Salesforce Commerce Cloud &mdash; better targeting precision, less audience overlap between campaigns that had previously been competing for the same person. Marketo and Litmus were integrated with the AEM-driven properties, and the scattered legacy payment systems were consolidated onto a single Braintree integration.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li><strong>Conversions up 18%</strong> and <strong>cart abandonment down 15%</strong> via AEM personalization and targeted campaigns</li>
         <li><strong>30% less manual financial reconciliation</strong> from the WebMethods and ERP integration</li>
-        <li>Marketo and Litmus integrated with AEM-driven properties &mdash; send-time optimization and A/B testing</li>
+        <li>Send-time optimization and A/B testing through Marketo and Litmus</li>
         <li>Legacy payment systems consolidated onto a single Braintree integration</li>
       </ul>
     </div>
@@ -699,7 +759,7 @@ figcaption{
       <h3>L&amp;L Supply</h3>
       <p class="entry-role"><b>Ecommerce Architect &amp; Senior Developer</b> &middot; Feb 2020 &ndash; Mar 2021</p>
     </div>
-    <p class="lede">10,000 products and half a million customer records moved off a legacy platform onto Magento 2.3 without losing a row. Data migrations are where ecommerce projects quietly fail.</p>
+    <p class="lede">A West Coast home and garden supplier&rsquo;s storefront &mdash; a 10,000-product catalogue on Magento with a WordPress content site alongside it.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -712,11 +772,21 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>A CMS and commerce migration onto WordPress and Magento 2.3, carrying <strong>10,000+ custom and simple products</strong> and <strong>500,000 customer records</strong> across. A dropped row in that import is not a statistic, it is a long-standing customer who cannot log in and does not call to tell you &mdash; they just leave.</p>
-      <p>I also consolidated a tangle of legacy payment processors onto a single Braintree integration, and put Git across environments in a shop that had been deploying without it.</p>
-      <p>The part I am most pleased with is the least technical: I mentored a five-person development team through PHP, WordPress, and component architecture, then wrote down the standards so the improvement outlasted the engagement.</p>
+      <h4>Discovery</h4>
+      <p>What I inherited: a legacy ecommerce platform, a 10,000-product catalogue, half a million customer records, a tangle of separate payment processors, and a five-person team deploying without version control. I strategized the transition before touching any of it, because the sequence mattered more than the target platform.</p>
+      <h4>Architecture</h4>
+      <p>WordPress for content and Magento 2.3 for commerce, with custom store views for warehouse sourcing so the catalogue reflected where stock actually was rather than where the head office believed it was.</p>
+      <h4>Design</h4>
+      <p>Front-end and template work across both platforms as part of the migration, rather than a straight port of the legacy presentation.</p>
+      <h4>Development</h4>
+      <p>The migration itself: <strong>10,000+ custom and simple products</strong> and <strong>500,000 customer records</strong> carried across. A dropped row in that import is not a statistic, it is a long-standing customer who cannot log in and does not call to tell you &mdash; they just leave. I also put Git across every environment in a shop that had been deploying without it, and did the performance and security pass on the WordPress side.</p>
+      <h4>Integrations &amp; APIs</h4>
+      <p>The legacy payment processors consolidated onto a single Braintree integration.</p>
+      <h4>Team</h4>
+      <p>The part I am most pleased with is the least technical. I mentored a five-person development team through PHP, WordPress, and component architecture, then wrote the standards down &mdash; code review criteria and documentation templates &mdash; so the improvement outlasted the engagement.</p>
+      <h4>Outcomes</h4>
       <ul>
-        <li><strong>20% improvement in site performance</strong> and a lift in ecommerce conversion</li>
+        <li><strong>20% improvement in site performance and reliability</strong>, and a lift in ecommerce conversion</li>
         <li><strong>30% higher team productivity and code quality</strong> after mentoring</li>
         <li><strong>40% faster onboarding</strong> for new developers from code review standards and documentation templates</li>
       </ul>
@@ -740,7 +810,7 @@ figcaption{
       <h3>iRhythm Technologies</h3>
       <p class="entry-role"><b>Senior HubSpot Developer</b> &middot; Jan 2019 &ndash; Dec 2019</p>
     </div>
-    <p class="lede">Digital health, where the conversion event is a patient finding a cardiologist who takes their insurance. Landing pages, an API-driven physician locator, and the email program around them.</p>
+    <p class="lede">The marketing site for the Zio patch, a wearable cardiac monitor &mdash; landing pages, a physician locator, and the email program around them.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -753,8 +823,13 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>iRhythm makes the Zio patch &mdash; a wearable cardiac monitor. The marketing site&rsquo;s job is to move a worried person from &ldquo;my doctor mentioned this&rdquo; to an actual appointment, which makes the physician locator the most important thing on it.</p>
-      <p>I built that as an API-driven application rather than a static list, so it stayed correct as the provider network changed. Around it: customized HubSpot landing pages and modules, and direct and marketing email templates built to survive the rendering quirks of every client a fifty-year-old patient might be reading in.</p>
+      <h4>Discovery</h4>
+      <p>The site&rsquo;s actual job is to move a worried person from &ldquo;my doctor mentioned this&rdquo; to a booked appointment. Framing it that way changed the priority order: the physician locator became the most important thing on the site, and the email program became the thing that closes the gap for everyone not ready on the first visit.</p>
+      <h4>Development</h4>
+      <p>Customized HubSpot landing pages and modules built for campaign reuse rather than one-offs, plus direct and marketing email templates written to survive the rendering quirks of every client a fifty-year-old patient might plausibly be reading in.</p>
+      <h4>Integrations &amp; APIs</h4>
+      <p>I built the physician locator as an API-driven mapping application rather than a static list, so it stayed correct as the provider network changed &mdash; a static list of cardiologists is wrong within a quarter and nobody notices until a patient does.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li><strong>30% boost in lead conversions</strong> from the custom HubSpot landing pages and modules</li>
         <li><strong>23% longer visit duration</strong> from the API-driven physician locator</li>
@@ -780,7 +855,7 @@ figcaption{
       <h3>Ten-X</h3>
       <p class="entry-role"><b>Senior WordPress Developer</b> &middot; Sep 2015 &ndash; Jan 2018</p>
     </div>
-    <p class="lede">Commercial real estate moving to online auction. Platform enhancements, an SEO program that paid, and a release process that stopped depending on someone remembering the steps.</p>
+    <p class="lede">A commercial real estate marketplace that moved property auctions online.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -793,12 +868,19 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>A property marketplace built on the bet that commercial real estate would trade online. I led the team meetings driving WordPress platform enhancements &mdash; the work came out of those sessions rather than off a ticket queue &mdash; and contributed to the technical specifications and architecture design alongside building it.</p>
+      <h4>Discovery</h4>
+      <p>I led the team meetings driving WordPress platform enhancements &mdash; the roadmap came out of those sessions rather than off a ticket queue &mdash; and contributed to the technical specifications and architecture design that came out of them.</p>
+      <h4>Design</h4>
+      <p>Advised on site design and UX/UI enhancements across the marketplace, working with the design team rather than around them.</p>
+      <h4>Development</h4>
+      <p>Custom PHP-based WordPress themes and platform enhancements built against those specifications, aligned to business goals rather than to a feature list, plus the technical SEO program that turned out to be the highest-return work of the engagement.</p>
+      <h4>Delivery</h4>
       <p>The deployment side mattered as much as the features. I deployed auto-build procedures to production with real testing and validation, replacing a release process that worked fine right up until the person who knew it took a holiday.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li><strong>35% increase in conversions</strong> from the SEO program</li>
         <li><strong>25% more site traffic</strong> from platform enhancements</li>
-        <li>Automated build and deploy to production servers with rigorous testing and validation</li>
+        <li>Automated build and deploy to production with rigorous testing and validation</li>
       </ul>
     </div>
     <div class="aside rv">
@@ -820,7 +902,7 @@ figcaption{
       <h3>Chrome Industries</h3>
       <p class="entry-role"><b>Magento Developer</b> &middot; 2014 &ndash; 2015</p>
     </div>
-    <p class="lede">Messenger bags for people who ride in the rain. Custom product and category layouts, a responsive rebuild, and PCI compliance carried from audit to clean scan.</p>
+    <p class="lede">The ecommerce site for a San Francisco cycling bag and apparel brand.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -833,9 +915,15 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>A San Francisco cycling and bag brand with a genuinely devoted customer base, which raises the stakes on the product page: these buyers know the seatbelt buckle by name and will notice if you get the spec wrong.</p>
-      <p>I built custom product detail, category, and landing page layouts, and wrote custom JavaScript and CSS to get the weight down. 2014 was also the year mobile stopped being optional, and the responsive build was the single biggest lever on bounce.</p>
-      <p>Separately, I led the PCI self-assessment questionnaire and scan through to full compliance &mdash; unglamorous, non-negotiable, and the kind of thing that only becomes visible when it has not been done.</p>
+      <h4>Discovery</h4>
+      <p>A genuinely devoted customer base raises the stakes on the product page &mdash; these buyers know the seatbelt buckle by name and will notice if a spec is wrong. The other finding was in the analytics rather than the brief: 2014 was the year mobile stopped being optional, and bounce on small screens was the largest single number on the table.</p>
+      <h4>Design</h4>
+      <p>Custom product detail, category, and landing page layouts built around the specification detail those buyers came for, and a responsive rebuild across the store.</p>
+      <h4>Development</h4>
+      <p>The Magento template work behind those layouts, plus custom JavaScript and CSS written specifically to get page weight down rather than to add anything.</p>
+      <h4>Security &amp; compliance</h4>
+      <p>I led the PCI self-assessment questionnaire and scan through to full compliance &mdash; unglamorous, non-negotiable, and the kind of work that only becomes visible when it has not been done.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li><strong>Add-to-cart up 20%</strong> and <strong>retention up 40%</strong> from the custom PDP, category, and landing page layouts</li>
         <li><strong>30% faster page loads</strong> from custom JavaScript and CSS</li>
@@ -862,7 +950,7 @@ figcaption{
       <h3>Thismoment</h3>
       <p class="entry-role"><b>Software &amp; Production Engineer</b> &middot; 2013 &ndash; 2014</p>
     </div>
-    <p class="lede">User-generated content platforms and video tooling for Fortune 500 brands &mdash; back when &ldquo;brand content hub&rdquo; meant somebody had to build the hub.</p>
+    <p class="lede">Branded content hubs and user-generated content platforms for Fortune 500 marketers &mdash; Coca-Cola, Procter &amp; Gamble, Frito-Lay, AT&amp;T.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -875,10 +963,17 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Thismoment built content marketing platforms for brands including Coca-Cola, Procter &amp; Gamble, Frito-Lay, and AT&amp;T. My work was the custom UGC platforms and the video tooling underneath them &mdash; collection, moderation, and playback at campaign scale, where a successful launch is indistinguishable from a denial-of-service attack.</p>
-      <p>The rebuild I remember is the video player. Buffering is the metric nobody puts in the brief and everybody notices; halving it did more for engagement than any feature shipped that quarter.</p>
+      <h4>Discovery</h4>
+      <p>Campaign platforms have an unusual failure profile: a successful launch is indistinguishable from a denial-of-service attack. Scoping every build started with the ceiling rather than the feature list &mdash; what happens on the day the campaign works.</p>
+      <h4>Architecture</h4>
+      <p>Collection, moderation, and playback designed to hold at campaign scale, with the moderation queue sitting between the public feed and the page so a brand hub could never publish something nobody had looked at.</p>
+      <h4>Development</h4>
+      <p>The custom UGC platforms and the video tooling underneath them. The rebuild I remember is the video player: buffering is the metric nobody puts in the brief and everybody notices, and halving it did more for engagement than any feature shipped that quarter.</p>
+      <h4>Integrations &amp; APIs</h4>
+      <p>Social and content platform APIs feeding the hubs, normalized so one moderation pipeline served every source.</p>
+      <h4>Outcomes</h4>
       <ul>
-        <li>Custom UGC platforms and video tooling for Fortune 500 brands</li>
+        <li>Custom UGC platforms and video tooling shipped for Fortune 500 brands</li>
         <li>Video player rebuild <strong>cutting buffering 50%</strong></li>
       </ul>
     </div>
@@ -901,7 +996,7 @@ figcaption{
       <h3>Prima Studio</h3>
       <p class="entry-role"><b>Ecommerce Architect &amp; Lead Developer</b> &middot; Dec 2011 &ndash; Sep 2013</p>
     </div>
-    <p class="lede">Magento front and back end, a custom HTML5 video player built when that was still an argument, and a 70% performance gain over stock.</p>
+    <p class="lede">A Magento storefront for a dancewear label, with video carrying the product.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -914,8 +1009,17 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Stock Magento in 2012 was slow, and the industry consensus was that this was simply the price of Magento. It did not have to be. I rebuilt front and back end around that assumption and got a <strong>70% performance gain</strong> out of it.</p>
-      <p>The custom HTML5 video player dates the project precisely: this was the moment Flash was dying but not yet dead, and building native video meant handling every browser&rsquo;s idea of a codec yourself. Conversion instrumentation ran through the whole funnel, so the optimization work had numbers behind it rather than instinct.</p>
+      <h4>Discovery</h4>
+      <p>Stock Magento in 2012 was slow, and the industry consensus was that this was simply the price of Magento. Benchmarking said otherwise. The entire engagement was built on that finding, which is the only reason the number at the end is what it is.</p>
+      <h4>Architecture</h4>
+      <p>Front and back end rebuilt around performance as a constraint rather than tuned for it afterwards &mdash; the two produce very different systems and only one of them holds.</p>
+      <h4>Design</h4>
+      <p>Storefront and product presentation designed around motion, because in a dancewear catalogue a still photograph of a garment is missing the thing being sold.</p>
+      <h4>Development</h4>
+      <p>The Magento build front and back, plus a custom HTML5 video player. That component dates the project precisely: Flash was dying but not yet dead, and building native video in 2012 meant handling every browser&rsquo;s idea of a codec yourself.</p>
+      <h4>Integrations &amp; APIs</h4>
+      <p>Analytics and conversion instrumentation across the full funnel, so the optimization work had numbers behind it rather than instinct.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li><strong>70% performance gain</strong> over stock Magento</li>
         <li>Custom HTML5 video player, built ahead of broad browser consensus</li>
@@ -941,7 +1045,7 @@ figcaption{
       <h3>Urban Air Market</h3>
       <p class="entry-role"><b>Architect, Developer &amp; Creative Director</b> &middot; 2011 &ndash; 2013</p>
     </div>
-    <p class="lede">A sustainable design marketplace, taken from identity through print, email, and CMS build &mdash; one of the few engagements where I directed the creative and then had to go build it.</p>
+    <p class="lede">The site for a sustainable design marketplace running pop-up events for independent designers across the Bay Area.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -954,11 +1058,16 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Urban Air Market ran pop-up marketplaces for independent sustainable designers across the Bay Area. The brand had to hold up across a website, printed collateral handed out at the events, and the email program that filled them &mdash; three media that punish a logo in three different ways.</p>
-      <p>I directed the creative and built it: full site, print and email identity, CMS front and back end, and the SEO program. Being on the hook for the build is a useful constraint on the art direction; you stop specifying things you know you will resent implementing.</p>
+      <h4>Discovery</h4>
+      <p>The brand had to hold up in three places at once: a website, printed collateral handed out at the events themselves, and the email program that filled them. Three media that punish a logo in three different ways, and the mark had to be resolved against all of them before anything got built.</p>
+      <h4>Design</h4>
+      <p>I directed the creative &mdash; full identity across site, print, and email, including the event collateral.</p>
+      <h4>Architecture &amp; development</h4>
+      <p>Then I built it: the site, the CMS front and back end, and the SEO program. Being on the hook for the build is a useful constraint on the art direction &mdash; you stop specifying things you know you will resent implementing.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li>Full identity across site, print, and email</li>
-        <li>CMS front and back end</li>
+        <li>CMS front and back end, built to be run by the event team</li>
         <li>SEO program, and an <strong>80% performance gain</strong> over standard builds of the period</li>
       </ul>
     </div>
@@ -981,7 +1090,7 @@ figcaption{
       <h3>Euro RSCG</h3>
       <p class="entry-role"><b>Lead Developer</b> &middot; 2011</p>
     </div>
-    <p class="lede">Porting a Flash game to HTML5 and jQuery Mobile in the year that decision was still contentious &mdash; plus the companion iOS and Android apps.</p>
+    <p class="lede">A branded game for a global advertising network, plus its companion iOS and Android apps.</p>
   </div>
   <figure>
     <div class="bleed">
@@ -1000,11 +1109,14 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Euro RSCG was a global agency network &mdash; it became Havas Worldwide shortly after. The brief was a Flash-based game that needed to run on phones, which in 2011 meant it needed to stop being Flash.</p>
-      <p>I ported it to HTML5 and jQuery Mobile and halved the load time in the process, then built the companion iOS and Android apps. Apple had published the &ldquo;Thoughts on Flash&rdquo; letter about a year earlier and most agencies were still arguing; this was one of the projects where the argument had already been settled by the client&rsquo;s analytics.</p>
+      <h4>Discovery</h4>
+      <p>The brief was a Flash-based game that needed to run on phones, which in 2011 meant it needed to stop being Flash. Apple had published <em>Thoughts on Flash</em> about a year earlier and most agencies were still arguing about it; here the client&rsquo;s own analytics had already settled the argument, so the discovery work was mostly showing people the numbers.</p>
+      <h4>Development</h4>
+      <p>Ported the game to HTML5 and jQuery Mobile, halving load times in the process, then built the companion iOS and Android applications on top of the same game logic.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li>Flash game ported to HTML5 and jQuery Mobile, <strong>halving load times</strong></li>
-        <li>Companion iOS and Android applications</li>
+        <li>Companion iOS and Android applications shipped</li>
       </ul>
     </div>
     <div class="aside rv">
@@ -1026,7 +1138,7 @@ figcaption{
       <h3>Moss Outdoor</h3>
       <p class="entry-role"><b>Lead Developer</b> &middot; 2010 &ndash; 2011</p>
     </div>
-    <p class="lede">UI design through CMS build and commerce integration &mdash; and an SEO program that lifted visibility 220%.</p>
+    <p class="lede">An outdoor furniture catalogue and online store.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -1039,8 +1151,15 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Outdoor furniture, which is a catalogue where the photography carries the sale and the specification table closes it. I took it from UI design through the CMS build and the commerce integration.</p>
-      <p>The SEO program is the number that still surprises people: <strong>220% visibility lift</strong>. That figure is only possible on a site that started with a structural problem &mdash; in this case product content the search engines could not reach. Most of the win was making the catalogue legible rather than anything clever.</p>
+      <h4>Discovery</h4>
+      <p>A catalogue where the photography carries the sale and the specification table closes it &mdash; and, underneath that, product content the search engines could not reach at all. The structural finding was worth more than anything on the feature list.</p>
+      <h4>Design</h4>
+      <p>UI design across the catalogue, category, and product pages, built around large photography without letting it push the specifications off the screen.</p>
+      <h4>Development</h4>
+      <p>Production CMS build against that design, plus the commerce integration behind it.</p>
+      <h4>SEO</h4>
+      <p>The <strong>220% visibility lift</strong> is the number that still surprises people, and it is only possible on a site that started with a structural problem. Most of the win was making the catalogue legible to crawlers rather than anything clever.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li>UI design through production CMS build</li>
         <li>Commerce integration</li>
@@ -1066,7 +1185,7 @@ figcaption{
       <h3>Digital Brewing Company</h3>
       <p class="entry-role"><b>Front-End Developer</b> &middot; 2008 &ndash; 2009</p>
     </div>
-    <p class="lede">Agency campaign builds with third-party data integration, and front-end performance work in an era when that mostly meant fighting your own markup.</p>
+    <p class="lede">Campaign microsites and client builds for an agency roster.</p>
   </div>
   <figure>
     <div class="bleed">
@@ -1085,9 +1204,15 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Client campaign builds on agency timelines, wired to third-party data sources that were rarely documented and never stable. The front-end performance work of 2008 was a different discipline from today&rsquo;s &mdash; no build tools worth the name, no HTTP/2, and a browser matrix that included IE6 whether anyone liked it or not.</p>
+      <h4>Discovery</h4>
+      <p>Client campaign builds on agency timelines, each wired to third-party data sources that were rarely documented and never stable. Most of the scoping effort went into establishing what a given feed actually returned, as opposed to what its owner believed it returned.</p>
+      <h4>Development</h4>
+      <p>Front-end builds in XHTML/CSS and JavaScript across the roster. Performance work in 2008 was a different discipline from today&rsquo;s &mdash; no build tools worth the name, no HTTP/2, and a browser matrix that included IE6 whether anyone liked it or not &mdash; so most of the win came out of the markup itself.</p>
+      <h4>Integrations &amp; APIs</h4>
+      <p>Third-party data integration into the campaign builds, defensively written on the assumption the source would change without warning.</p>
+      <h4>Outcomes</h4>
       <ul>
-        <li>Client campaign builds across an agency roster</li>
+        <li>Client campaign builds delivered across an agency roster</li>
         <li>Third-party data integration</li>
         <li>Front-end performance optimization</li>
       </ul>
@@ -1111,7 +1236,7 @@ figcaption{
       <h3>Nimblefish Technologies</h3>
       <p class="entry-role"><b>Lead Web Developer</b> &middot; 2002 &ndash; 2008</p>
     </div>
-    <p class="lede">Six years of web and email builds against a proprietary CMS, in a Linux, Apache and Tomcat environment. The long apprenticeship.</p>
+    <p class="lede">Marketing automation and variable-data campaigns &mdash; personalized web and print at volume for enterprise clients.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -1124,11 +1249,17 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Nimblefish ran marketing automation and variable-data campaigns for enterprise clients &mdash; personalized web and print at volume, years before &ldquo;marketing automation&rdquo; was a category with a Gartner quadrant.</p>
-      <p>Everything was built against a proprietary CMS on Linux, Apache, and Tomcat. Working inside somebody else&rsquo;s CMS for six years teaches you the thing no framework tutorial does: what a platform&rsquo;s assumptions cost you three years later, and how to design so the answer is &ldquo;less than it could have.&rdquo;</p>
+      <h4>Discovery</h4>
+      <p>Every campaign started as a data question rather than a design one: what fields exist per recipient, which of them can be trusted, and what the page does when one is missing. Personalization at volume fails on the empty field, not the full one.</p>
+      <h4>Architecture</h4>
+      <p>Everything was built against a proprietary CMS on Linux, Apache, and Tomcat. Six years working inside somebody else&rsquo;s CMS teaches you the thing no framework tutorial does: what a platform&rsquo;s assumptions cost you three years later, and how to design so the answer is &ldquo;less than it could have been.&rdquo;</p>
+      <h4>Development</h4>
+      <p>Web and email builds in JSP against that CMS, personalized per recipient at campaign volume &mdash; years before &ldquo;marketing automation&rdquo; was a category with a Gartner quadrant.</p>
+      <h4>Outcomes</h4>
       <ul>
-        <li>Web and email builds against a proprietary CMS</li>
+        <li>Six years of web and email builds against a proprietary CMS</li>
         <li>Linux / Apache / Tomcat production environment</li>
+        <li>Variable-data personalization across web and print at enterprise volume</li>
       </ul>
     </div>
     <div class="aside rv">
@@ -1150,7 +1281,7 @@ figcaption{
       <h3>Nationalflashback</h3>
       <p class="entry-role"><b>Consultant &amp; Creative Director</b> &middot; 2000 &ndash; 2008</p>
     </div>
-    <p class="lede">The first independent practice. Eight years serving enterprise, SMB, and agency clients across architecture, build, and creative direction &mdash; where the habit of owning the whole stack started.</p>
+    <p class="lede">My first independent practice &mdash; a design and development shop serving enterprise, small-business, and agency clients.</p>
   </div>
   <figure>
     <div class="bleed">
@@ -1169,11 +1300,16 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>My own shop, run for eight years across enterprise, small-business, and agency clients. Architecture, build, and creative direction were not separate offerings so much as the same job seen from different ends &mdash; a small practice does not get to specialize, which turns out to be the most useful training available.</p>
-      <p>Nearly everything from this period is gone from the live web. The capture beside this is what the practice looked like at the time.</p>
+      <h4>Discovery</h4>
+      <p>Eight years of running my own shop meant every engagement started with me in the room for the sales conversation, the requirements, and the estimate. That is where the habit of assessing current state before proposing anything came from &mdash; when you own the estimate, an optimistic assumption is expensive and personal.</p>
+      <h4>Architecture &amp; design</h4>
+      <p>Architecture, build, and creative direction were not separate offerings so much as the same job seen from different ends. A small practice does not get to specialize, which turns out to be the most useful training available.</p>
+      <h4>Development</h4>
+      <p>Front-end and CMS builds across the client roster, delivered solo or with contractors I directed. Nearly everything from this period is gone from the live web; the capture beside this is what the practice itself looked like at the time.</p>
+      <h4>Outcomes</h4>
       <ul>
-        <li>Independent practice serving enterprise, SMB, and agency clients</li>
-        <li>Architecture, build, and creative direction across the client roster</li>
+        <li>Independent practice sustained eight years across enterprise, SMB, and agency clients</li>
+        <li>Architecture, build, and creative direction owned end to end on every engagement</li>
       </ul>
     </div>
     <div class="aside rv">
@@ -1195,7 +1331,7 @@ figcaption{
       <h3>Puzzle Theory</h3>
       <p class="entry-role"><b>Art Director &amp; Lead Developer</b> &middot; 2002 &ndash; 2005</p>
     </div>
-    <p class="lede">Site strategy, cross-platform build, and collateral production &mdash; back when &ldquo;cross-platform&rdquo; meant Netscape as well as Internet Explorer.</p>
+    <p class="lede">A design studio &mdash; site strategy, cross-platform build, and printed collateral for its clients.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -1208,11 +1344,17 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Art direction and lead development on the same projects &mdash; site strategy through cross-platform build and printed collateral. The earliest work in this archive, and a reasonable illustration of how much the job has changed: the layout problems of 2003 were solved with tables and spacer GIFs because there was nothing else.</p>
+      <h4>Discovery</h4>
+      <p>Site strategy and information architecture, done as the first phase of every project rather than as a deliverable sold separately. The earliest work in this archive and the point where the sequence &mdash; strategy, then structure, then surface &mdash; became habit.</p>
+      <h4>Design</h4>
+      <p>Art direction across screen and print on the same projects, so the collateral and the site were one thing rather than two interpretations of a brand.</p>
+      <h4>Development</h4>
+      <p>Cross-platform build, which in 2003 meant Netscape as well as Internet Explorer. A reasonable illustration of how much the job has changed: the layout problems of that period were solved with tables and spacer GIFs because there was nothing else.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li>Site strategy and information architecture</li>
-        <li>Cross-platform build</li>
-        <li>Collateral production</li>
+        <li>Cross-platform build across the browser matrix of the period</li>
+        <li>Collateral production alongside the digital work</li>
       </ul>
     </div>
     <div class="aside rv">
@@ -1234,7 +1376,7 @@ figcaption{
       <h3>OdySay</h3>
       <p class="entry-role"><b>Architect &amp; Magento Developer</b> &middot; Contract</p>
     </div>
-    <p class="lede">Catalog structure and checkout flow designed for the business the store would become, not the one it was on launch day.</p>
+    <p class="lede">A Magento storefront for a fashion label.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -1247,8 +1389,15 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Storefront architecture and the Magento build. The catalog structure and checkout flow were designed for what the business would look like after growth &mdash; the difference between a store that scales and one that gets rebuilt in eighteen months by someone cursing your name.</p>
-      <p>Integration work tied the storefront to the systems behind it so inventory, orders, and product data stayed consistent without anyone reconciling spreadsheets on a Friday afternoon.</p>
+      <h4>Discovery</h4>
+      <p>The useful question was not what the store needed on launch day but what it would need after growth &mdash; how the catalogue would be cut two seasons later, and which of today&rsquo;s conveniences would be load-bearing by then.</p>
+      <h4>Architecture</h4>
+      <p>Catalog structure and checkout flow designed for that later business rather than the current one. It is the difference between a store that scales and one that gets rebuilt in eighteen months by someone cursing your name.</p>
+      <h4>Development</h4>
+      <p>The Magento build against that architecture, front and back.</p>
+      <h4>Integrations &amp; APIs</h4>
+      <p>Integration work tying the storefront to the systems behind it, each designed as a reusable pattern, so inventory, orders, and product data stayed consistent without anyone reconciling spreadsheets on a Friday afternoon.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li>Catalog and checkout architecture built with growth headroom</li>
         <li>Third-party integrations designed as reusable patterns</li>
@@ -1273,7 +1422,7 @@ figcaption{
       <h3>Terra Firma Music</h3>
       <p class="entry-role"><b>Architect, Designer &amp; Developer</b> &middot; Contract</p>
     </div>
-    <p class="lede">Identity through build, with a front end tuned around the one constraint every music site ignores: media-heavy pages that still have to load.</p>
+    <p class="lede">A music site &mdash; artwork, audio, and video for an artist roster.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -1286,11 +1435,17 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>End to end: identity, design, architecture, and build. Music sites are media-heavy by nature &mdash; artwork, audio, video &mdash; and the usual outcome is a beautiful page that takes eight seconds to become useful, by which point the visitor has gone back to the streaming service.</p>
-      <p>The front end was tuned around that constraint from the start rather than optimized after the fact, which is the only version of performance work that actually holds.</p>
+      <h4>Discovery</h4>
+      <p>Music sites are media-heavy by nature, and the usual outcome is a beautiful page that takes eight seconds to become useful, by which point the visitor has gone back to the streaming service. That constraint was established before the design started rather than discovered after launch, which is why it was survivable.</p>
+      <h4>Design</h4>
+      <p>Identity and visual design end to end, built to carry artwork at scale without the page becoming a gallery the visitor has to wait for.</p>
+      <h4>Architecture &amp; development</h4>
+      <p>The front end was tuned around first render from the outset rather than optimized after the fact &mdash; the only version of performance work that actually holds. A CMS behind it so the roster could be updated without me.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li>Full identity through production build</li>
         <li>Media-heavy pages tuned for fast first render</li>
+        <li>CMS handover for independent roster updates</li>
       </ul>
     </div>
     <div class="aside rv">
@@ -1312,7 +1467,7 @@ figcaption{
       <h3>The Liquor Store SF</h3>
       <p class="entry-role"><b>Architect, Designer &amp; Developer</b> &middot; Contract</p>
     </div>
-    <p class="lede">A San Francisco hospitality brand where most traffic arrives on a phone, in low light, standing up. Booking and menus were designed for that first.</p>
+    <p class="lede">A San Francisco hospitality brand&rsquo;s site &mdash; menus, booking, and a small storefront.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -1325,8 +1480,13 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>Hospitality has a context problem that most responsive design briefs quietly skip: the person reading your menu is holding a drink, the room is dark, and they have about fifteen seconds of patience. Booking and menus had to work in that situation first and look good on a desktop second.</p>
-      <p>Design, architecture, and build were all mine, which meant the responsive behaviour was a design decision made up front rather than a development compromise negotiated at the end.</p>
+      <h4>Discovery</h4>
+      <p>Hospitality has a context problem that most responsive briefs quietly skip: the person reading your menu is holding a drink, the room is dark, and they have about fifteen seconds of patience. Everything downstream was scoped against that situation rather than against a desktop comp.</p>
+      <h4>Design</h4>
+      <p>Booking and menu flows designed mobile-first for that context and desktop second. Design, architecture, and build were all mine, which meant the responsive behaviour was a design decision made up front rather than a development compromise negotiated at the end.</p>
+      <h4>Development</h4>
+      <p>WordPress build with the storefront integrated into the brand site, so ordering and reservations did not hand the visitor off to somebody else&rsquo;s checkout mid-decision.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li>Mobile-first booking and menu flows</li>
         <li>Storefront integrated with the brand site</li>
@@ -1351,7 +1511,7 @@ figcaption{
       <h3>First Presbyterian Church</h3>
       <p class="entry-role"><b>Architect &amp; WordPress Developer</b> &middot; Contract</p>
     </div>
-    <p class="lede">Structure, accessibility, and hardening for a site whose next maintainers are volunteers. Anything clever enough to need me later was the wrong answer.</p>
+    <p class="lede">A congregation&rsquo;s WordPress site &mdash; services, events, and giving.</p>
   </div>
   <figure>
     <div class="shot bleed">
@@ -1364,8 +1524,13 @@ figcaption{
   </figure>
   <div class="entry-body">
     <div class="prose rv">
-      <p>One constraint shaped every decision here: the people maintaining this site after I left are volunteers, not developers. That rules out most of the interesting answers, and it is a genuinely better brief than it sounds &mdash; it forces you to justify complexity to someone who will never read the documentation.</p>
-      <p>Structural and accessibility improvements, plus security hardening on a WordPress install that had accumulated the usual decade of plugin debt.</p>
+      <h4>Discovery</h4>
+      <p>One constraint shaped every decision here: the people maintaining this site after I left are volunteers, not developers. That rules out most of the interesting answers, and it is a genuinely better brief than it sounds &mdash; it forces you to justify complexity to somebody who will never read the documentation.</p>
+      <h4>Architecture</h4>
+      <p>Restructured around what a volunteer can safely edit. Anything clever enough to need me later was the wrong answer, so the clever parts were removed rather than documented.</p>
+      <h4>Development</h4>
+      <p>An accessibility pass across templates and content, and security hardening on a WordPress install that had accumulated the usual decade of plugin debt.</p>
+      <h4>Outcomes</h4>
       <ul>
         <li>Restructured for volunteer maintenance</li>
         <li>Accessibility pass and security hardening</li>
