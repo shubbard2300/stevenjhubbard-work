@@ -1,0 +1,1447 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>The Work Archive — Steven J. Hubbard</title>
+<meta name="author" content="Steven John Hubbard">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="description" content="Twenty-five years of shipped work, in order — every client and employer from 2000 to now, each shown as the site actually looked during the engagement. Recovered from the Wayback Machine where the original is gone.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' role='img' aria-label='Steven J. Hubbard'> <rect width='512' height='512' rx='96' fill='%233D7BFF'/> <g fill='%23F2F6FF'> <rect x='140' y='120' width='64' height='272' rx='8'/> <rect x='308' y='120' width='64' height='272' rx='8'/> <rect x='140' y='210' width='232' height='72' rx='8'/> </g> </svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Accent hue follows the visitor's local clock. Parser-blocking and above
+     <body> on purpose: the attribute has to land before first paint, or the
+     page flashes the day blue and then corrects itself. Same behaviour as the
+     main site, so moving between the two domains doesn't change temperature. -->
+<script>
+(function () {
+  var el = document.documentElement;
+  function daypart(h) {
+    if (h < 5)  return 'night';
+    if (h < 9)  return 'dawn';
+    if (h < 17) return 'day';
+    if (h < 22) return 'dusk';
+    return 'night';
+  }
+  function set() { el.setAttribute('data-daypart', daypart(new Date().getHours())); }
+  set();
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) set(); });
+  setInterval(set, 600000);
+})();
+</script>
+
+<!-- Google Analytics 4 — same property as the apex site, so the archive's
+     traffic reports alongside it rather than as a separate unattributed domain. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGMML7BB0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TGMML7BB0S');
+</script>
+
+<link rel="canonical" href="https://work.stevenjhubbard.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Work Archive — Steven J. Hubbard">
+<meta property="og:description" content="Twenty-five years of shipped work, in order. Every client and employer from 2000 to now, each shown as the site actually looked during the engagement.">
+<meta property="og:url" content="https://work.stevenjhubbard.com/">
+<meta property="og:image" content="https://work.stevenjhubbard.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Work Archive — Steven J. Hubbard">
+<meta property="og:site_name" content="Steven J. Hubbard">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Work Archive — Steven J. Hubbard">
+<meta name="twitter:description" content="Every client and employer from 2000 to now, each shown as the site actually looked during the engagement.">
+<meta name="twitter:image" content="https://work.stevenjhubbard.com/og-image.png">
+<meta name="theme-color" content="#07090E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,75..125,400..900;1,75..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+
+<style>
+/* ─────────────────────────────────────────────────────────────
+   The Work Archive — work.stevenjhubbard.com
+   Same drafting-sheet identity as the apex site, restructured
+   around one thing: the screenshots run full-bleed and the prose
+   sits in a narrow column beside them.
+   ───────────────────────────────────────────────────────────── */
+:root{
+  --ground:#07090E;
+  --ground-2:#0A0D15;
+  --panel:#0E1420;
+  --panel-2:#121A29;
+  --line:#1C2536;
+  --line-2:#2A3A54;
+  --ink:#E9EEF8;
+  --ink-2:#A6B2C6;
+  --ink-3:#7E8A9C;
+
+  /* Defaults are the canonical drafting blue (#3D7BFF) — also what shows
+     with JavaScript off. Lightnesses are solved per hue so every daypart
+     carries the day blue's luminance; see the apex site for the reasoning. */
+  --accent-h:221;
+  --accent-s:100%;
+  --accent-l:62%;
+  --accent-l-lift:68%;
+  --accent-l-2:78%;
+  --accent:hsl(var(--accent-h) var(--accent-s) var(--accent-l));
+  --accent-2:hsl(var(--accent-h) var(--accent-s) var(--accent-l-2));
+  --accent-lift:hsl(var(--accent-h) var(--accent-s) var(--accent-l-lift));
+  --accent-soft:hsl(var(--accent-h) var(--accent-s) var(--accent-l) / .14);
+  --accent-glow:hsl(var(--accent-h) var(--accent-s) var(--accent-l) / .30);
+  --accent-veil:hsl(var(--accent-h) var(--accent-s) var(--accent-l) / .10);
+  --signal:#FFB454;
+
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+
+  --wrap:1320px;
+  --gut:clamp(20px,4.2vw,64px);
+  --rule:1px solid var(--line);
+}
+
+@media screen{
+  html[data-daypart="dawn"] {--accent-h:207;--accent-l:46.5%;--accent-l-lift:54.5%;--accent-l-2:70%}
+  html[data-daypart="day"]  {--accent-h:221;--accent-l:62%;--accent-l-lift:68%;--accent-l-2:78%}
+  html[data-daypart="dusk"] {--accent-h:250;--accent-l:70.5%;--accent-l-lift:75%;--accent-l-2:83%}
+  html[data-daypart="night"]{--accent-h:232;--accent-l:68.5%;--accent-l-lift:73.5%;--accent-l-2:81.5%}
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+::selection{background:var(--accent);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:2px}
+
+/* ── Type primitives ─────────────────────────────────────── */
+.mono{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500;
+}
+.mono .dot{color:var(--accent)}
+h1,h2,h3,h4{font-family:var(--display);margin:0;text-wrap:balance;font-weight:800}
+h1{font-size:clamp(40px,7.5vw,104px);line-height:.92;letter-spacing:-.035em;font-variation-settings:"wdth" 112}
+h2{font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-.028em;font-variation-settings:"wdth" 108}
+h3{font-size:clamp(22px,2.6vw,34px);line-height:1.08;letter-spacing:-.022em;font-weight:800;font-variation-settings:"wdth" 106}
+p{margin:0}
+.lede{font-size:clamp(16.5px,1.35vw,19px);color:var(--ink-2);max-width:62ch}
+strong{color:var(--ink);font-weight:600}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ── Layout ──────────────────────────────────────────────── */
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
+section{position:relative}
+
+/* Full-bleed escape hatch. body has overflow-x:hidden, so the 100vw
+   breakout can't introduce a horizontal scrollbar even where the
+   viewport unit includes the vertical scrollbar's width. */
+.bleed{width:100vw;margin-left:calc(50% - 50vw)}
+
+/* ── Header ──────────────────────────────────────────────── */
+.nav{
+  position:sticky;top:0;z-index:40;
+  background:hsl(222 33% 4% / .82);
+  backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:var(--rule);
+}
+.nav-in{
+  max-width:var(--wrap);margin:0 auto;padding:14px var(--gut);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:-.01em}
+.brand i{width:7px;height:7px;background:var(--accent);border-radius:1px;box-shadow:0 0 12px var(--accent-glow);font-style:normal}
+.brand span{color:var(--ink-3);font-weight:600}
+.nav-back{
+  font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-2);border:var(--rule);border-radius:999px;padding:7px 15px;
+  transition:border-color .2s,color .2s,background .2s;white-space:nowrap;
+}
+.nav-back:hover{color:var(--ink);border-color:var(--line-2);background:var(--accent-veil)}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:60;box-shadow:0 0 12px var(--accent-glow)}
+/* Below this the brand wraps to two lines and shoves the nav out of alignment;
+   the page title already says which site this is. */
+@media (max-width:560px){.brand span{display:none}}
+
+/* ── Hero ────────────────────────────────────────────────── */
+.hero{padding-block:clamp(70px,11vw,150px) clamp(44px,6vw,78px)}
+.hero .mono{display:block;margin-bottom:22px}
+.hero h1{margin-bottom:28px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-foot{
+  display:flex;flex-wrap:wrap;gap:14px 40px;align-items:baseline;
+  margin-top:36px;padding-top:26px;border-top:var(--rule);
+}
+.stat{display:flex;flex-direction:column;gap:2px}
+.stat b{font-family:var(--display);font-size:clamp(26px,3.2vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.stat span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ── Filters ─────────────────────────────────────────────── */
+.filterbar{
+  position:sticky;top:53px;z-index:30;
+  background:hsl(222 33% 4% / .9);backdrop-filter:blur(12px);
+  border-block:var(--rule);
+}
+.filters{
+  max-width:var(--wrap);margin:0 auto;padding:12px var(--gut);
+  display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;
+}
+.filters::-webkit-scrollbar{display:none}
+.filters button{
+  flex:0 0 auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-3);background:transparent;
+  border:var(--rule);border-radius:999px;padding:7px 14px;cursor:pointer;
+  transition:color .2s,border-color .2s,background .2s;
+}
+.filters button:hover{color:var(--ink-2);border-color:var(--line-2)}
+.filters button[aria-pressed="true"]{color:var(--ink);border-color:var(--accent);background:var(--accent-soft)}
+
+/* ── A project ───────────────────────────────────────────── */
+.entry{border-top:var(--rule);padding-block:clamp(48px,6.5vw,92px)}
+.entry[hidden]{display:none}
+
+.entry-head{
+  max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut);
+  display:grid;grid-template-columns:minmax(0,1fr);gap:16px;
+  margin-bottom:clamp(28px,3.5vw,46px);
+}
+@media (min-width:900px){
+  .entry-head{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:end}
+}
+.entry-no{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.entry-no .mono{color:var(--accent)}
+.entry-no hr{flex:1;border:0;border-top:var(--rule);margin:0}
+.entry-head h3{margin-bottom:10px}
+.entry-role{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-3)}
+.entry-role b{color:var(--ink-2);font-weight:500}
+
+/* ── The screenshot ──────────────────────────────────────── */
+figure{margin:0}
+.shot{
+  position:relative;background:var(--panel);
+  border-block:var(--rule);overflow:hidden;
+}
+.shot img{
+  width:100%;height:auto;
+  /* Reserved before load: every capture is shot at 2000×1250. */
+  aspect-ratio:2000/1250;object-fit:cover;object-position:top center;
+}
+/* A hairline of accent along the top edge reads as a plotter registration
+   mark and stops the screenshot from floating free of the page. */
+.shot::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent 55%);z-index:1}
+
+/* Four sites in this archive cannot be screenshotted at all: three were
+   Flash-only and one is a client-rendered app whose archived JavaScript will
+   never hydrate. Rather than substitute a wrong image or a later redesign,
+   the slot states what is missing, in the same frame the screenshots use. */
+.shot--gone{
+  display:grid;place-items:center;aspect-ratio:2000/1250;
+  background:
+    repeating-linear-gradient(0deg,transparent 0 47px,var(--line) 47px 48px),
+    repeating-linear-gradient(90deg,transparent 0 47px,var(--line) 47px 48px),
+    var(--ground-2);
+}
+.gone-in{text-align:center;padding:var(--gut);max-width:60ch}
+.gone-in .domain{
+  font-family:var(--mono);font-size:clamp(15px,2.4vw,30px);letter-spacing:.02em;
+  color:var(--ink-2);margin-bottom:18px;word-break:break-all;
+}
+.gone-in .why{font-size:clamp(14px,1.2vw,16.5px);color:var(--ink-3);line-height:1.55}
+.gone-in .tag{
+  display:inline-block;margin-bottom:22px;padding:5px 12px;border-radius:999px;
+  border:1px solid hsl(33 100% 66% / .35);background:hsl(33 100% 66% / .1);color:var(--signal);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+}
+
+figcaption{
+  max-width:var(--wrap);margin:0 auto;padding:16px var(--gut) 0;
+  display:grid;gap:8px;
+}
+@media (min-width:820px){
+  figcaption{grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:32px}
+}
+.cap-text{font-size:14.5px;line-height:1.6;color:var(--ink-2);max-width:78ch}
+.cap-src{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);white-space:nowrap;display:flex;align-items:center;gap:8px;
+}
+.cap-src a{color:var(--ink-3);border-bottom:1px solid var(--line-2);transition:color .2s,border-color .2s}
+.cap-src a:hover{color:var(--accent-2);border-color:var(--accent)}
+.cap-src .badge{
+  display:inline-block;padding:3px 8px;border-radius:999px;border:var(--rule);
+  letter-spacing:.12em;
+}
+.cap-src .badge.live{color:var(--accent-2);border-color:var(--accent);background:var(--accent-soft)}
+.cap-src .badge.arch{color:var(--signal);border-color:hsl(33 100% 66% / .35);background:hsl(33 100% 66% / .1)}
+
+/* ── The prose ───────────────────────────────────────────── */
+.entry-body{
+  max-width:var(--wrap);margin:clamp(30px,4vw,54px) auto 0;padding-inline:var(--gut);
+  display:grid;grid-template-columns:minmax(0,1fr);gap:34px;
+}
+@media (min-width:980px){
+  .entry-body{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(40px,5vw,84px)}
+}
+.prose{color:var(--ink-2);max-width:68ch;font-size:16.5px}
+.prose p+p{margin-top:1.05em}
+.prose ul{margin:1.15em 0 0;padding-left:0;list-style:none;display:grid;gap:10px}
+.prose li{position:relative;padding-left:22px}
+.prose li::before{
+  content:"";position:absolute;left:0;top:.62em;width:7px;height:1px;background:var(--accent);
+}
+.aside{display:grid;gap:22px;align-content:start}
+.meta{display:grid;gap:14px}
+.meta div{display:grid;gap:3px}
+.meta dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.meta dd{margin:0;font-size:15px;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-2);
+  border:var(--rule);border-radius:4px;padding:4px 9px;background:var(--panel);
+}
+.visit{
+  display:inline-flex;align-items:center;gap:8px;align-self:start;
+  font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink);border:1px solid var(--line-2);border-radius:999px;padding:9px 17px;
+  transition:border-color .2s,background .2s,color .2s;
+}
+.visit:hover{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-2)}
+.visit i{font-style:normal;transition:transform .2s}
+.visit:hover i{transform:translateX(3px)}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.foot{border-top:var(--rule);padding-block:clamp(56px,7vw,96px);background:var(--ground-2)}
+.foot h2{margin-bottom:18px}
+.foot-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.foot-fine{
+  margin-top:44px;padding-top:22px;border-top:var(--rule);
+  display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+}
+
+/* ── Reveal ──────────────────────────────────────────────── */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* ── Print ───────────────────────────────────────────────── */
+@media print{
+  :root{--ground:#fff;--ink:#111;--ink-2:#333;--ink-3:#666;--line:#ccc;--line-2:#999;--accent:#0645AD;--panel:#fff}
+  .nav,.filterbar,.progress,.visit{display:none}
+  body{background:#fff;color:#111}
+  .rv{opacity:1;transform:none}
+  .entry{break-inside:avoid;page-break-inside:avoid}
+  .shot img{max-height:9cm;object-fit:cover}
+}
+</style>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="https://www.stevenjhubbard.com/"><i></i>Steven J. Hubbard <span>&middot; Work Archive</span></a>
+    <a class="nav-back" href="https://www.stevenjhubbard.com/">&larr; Main site</a>
+  </div>
+</header>
+<div class="progress" id="progress"></div>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="mono">Archive <span class="dot">&bull;</span> 2000 &mdash; 2026</span>
+    <h1>Everything<br>I&rsquo;ve <em>shipped</em>.</h1>
+    <p class="lede">Twenty-four engagements, in order. Each is shown as the site actually looked while I was working on it &mdash; pulled from the Wayback Machine where the original has since been redesigned, sold, or shut down. Four of them cannot be shown at all: three were built in Flash, one is a JavaScript application whose archived code will never run again. Those slots say so. It seemed more honest than a wall of logos.</p>
+    <div class="hero-foot">
+      <span class="stat"><b>24</b><span>Engagements</span></span>
+      <span class="stat"><b>25</b><span>Years</span></span>
+      <span class="stat"><b>10</b><span>Recovered from archive</span></span>
+      <span class="stat"><b>4</b><span>Lost to Flash and JavaScript</span></span>
+    </div>
+  </div>
+</section>
+
+<div class="filterbar">
+  <div class="filters" role="group" aria-label="Filter work by discipline">
+    <button type="button" data-f="all" aria-pressed="true">All work</button>
+    <button type="button" data-f="architecture" aria-pressed="false">Architecture</button>
+    <button type="button" data-f="ecommerce" aria-pressed="false">Ecommerce</button>
+    <button type="button" data-f="cms" aria-pressed="false">CMS</button>
+    <button type="button" data-f="development" aria-pressed="false">Development</button>
+    <button type="button" data-f="design" aria-pressed="false">Design</button>
+    <button type="button" data-f="integration" aria-pressed="false">Integration</button>
+    <button type="button" data-f="security" aria-pressed="false">Security</button>
+  </div>
+</div>
+
+<div id="entries">
+
+<!-- ══ 01 · MEND ═════════════════════════════════════════ -->
+<article class="entry" data-cat="development design ecommerce architecture">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">01</span><hr></div>
+      <h3>MEND Medical Wear</h3>
+      <p class="entry-role"><b>Founder, Architect &amp; Developer</b> &middot; 2026 &ndash; Present</p>
+    </div>
+    <p class="lede">Recovery apparel and connected-care, built end to end &mdash; positioning, identity, storefront, seven product pages, and a React assessment tool, all of it mine.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/mend.webp" srcset="assets/webp/mend@sm.webp 1000w, assets/webp/mend.webp 2000w" sizes="100vw" alt="The MEND Medical Wear homepage: a smiling older couple photographed outdoors in warm light, overlaid with the headline “Premium Recovery Apparel. Better Than Hospital Gowns.” Below it, two people wear grey zip-front MEND gowns beside the heading “Comfortable hospital wear, reimagined for real life.”" width="2000" height="1250" fetchpriority="high" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">The storefront as it stands. The hero deliberately photographs patients rather than products — the category’s convention is a flat-lay of fabric, which sells nothing to somebody about to spend a week in one. Everything below the fold is hand-written static HTML.</p>
+      <p class="cap-src"><span class="badge live">Live</span> <a href="https://www.mendmedicalwear.com/" target="_blank" rel="noopener">mendmedicalwear.com</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Soft washable recovery gowns, residential nurse scrubs, medical-grade compression socks, the AirGuard&trade; fall-detection collar, and the connected devices around them &mdash; a brand aimed at patients and at the people caring for them. I own every layer: the positioning, the identity, the product pages, the storefront architecture, and the code.</p>
+      <p>The storefront is hand-written static HTML, CSS, and JavaScript on Vercel. No framework, no build step for the site proper. That is a deliberate architectural call rather than a shortcut &mdash; a catalogue this size does not need a bundler, and skipping one buys near-instant loads and a site that will still build in five years without a dependency archaeology dig.</p>
+      <p>The exception is the <strong>fall-risk assessment tool</strong>, the site&rsquo;s lead magnet: a React application scoring fall risk against WHO data, with charts and a regional model. It runs through hand-written React shims rather than a bundler, so one interactive tool did not drag a toolchain onto the whole project.</p>
+      <ul>
+        <li>Seven product detail pages &mdash; gowns, scrubs, compression socks, the AirGuard&trade; collar, MEND Pulse, MEND Oxi, and the MEND app</li>
+        <li>React fall-risk assessment built on WHO fall data, wired to a serverless lead-capture endpoint</li>
+        <li>Full technical SEO program: www unification, clean product slugs, an image pipeline, security headers, sitemap and robots</li>
+        <li>Static-first architecture &mdash; no build step for the storefront, no framework lock-in</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Founder, Architect &amp; Developer</dd></div>
+        <div><dt>Engagement</dt><dd>2026 &ndash; Present</dd></div>
+        <div><dt>Discipline</dt><dd>Development &middot; Design &middot; Ecommerce &middot; Architecture</dd></div>
+      </dl>
+      <div class="chips"><span>Static HTML/CSS/JS</span><span>React</span><span>Vercel</span><span>Technical SEO</span><span>Serverless</span></div>
+      <a class="visit" href="https://www.mendmedicalwear.com/" target="_blank" rel="noopener">Visit site <i>&rarr;</i></a>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 02 · Steven Hubbard LLC ═══════════════════════════ -->
+<article class="entry" data-cat="architecture integration development">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">02</span><hr></div>
+      <h3>Steven Hubbard LLC</h3>
+      <p class="entry-role"><b>Independent Consultant &amp; Solutions Architect</b> &middot; Feb 2026 &ndash; Present</p>
+    </div>
+    <p class="lede">The consultancy, and the site that sells it. Client engagements owned end to end &mdash; current-state assessment through hands-on delivery.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/sjh.webp" srcset="assets/webp/sjh@sm.webp 1000w, assets/webp/sjh.webp 2000w" sizes="100vw" alt="The stevenjhubbard.com homepage on a near-black background: the name “Steven J. Hubbard” set very large in outlined display type, an “at a glance” panel listing years, core platforms and availability, and a row of client names running along the bottom — AKQA, Code and Theory, Marriott, Sears, AT&T, Lowe’s, Coca-Cola." width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">The apex site, and the parent of this one. Same drafting-sheet identity, same accent that tracks the visitor’s local clock — the two domains are one design system, deployed twice.</p>
+      <p class="cap-src"><span class="badge live">Live</span> <a href="https://www.stevenjhubbard.com/" target="_blank" rel="noopener">stevenjhubbard.com</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Independent practice. I own solution architecture end to end on client engagements: current-state assessment, target-state design, data modeling, integration strategy, feasibility review, and the hands-on delivery afterward &mdash; which is the part that keeps the architecture honest.</p>
+      <p>The through-line across clients is integration. Most organizations do not have a technology problem so much as four systems that each believe they are the source of truth. The work is finding that seam and closing it, then writing it down clearly enough that the client&rsquo;s own team can extend it without me.</p>
+      <ul>
+        <li>Multi-system event-driven integration automating project intake and ticket routing across Workfront, Slack, and Salesforce via REST &mdash; roughly <strong>40% less triage handoff time</strong></li>
+        <li>Client reporting pipelines consolidating ERP and commerce data into Snowflake, replacing spreadsheet reconciliation with a governed executive reporting layer</li>
+        <li>Solution architecture documentation, integration specifications, and reusable design patterns handed over so client teams can maintain the work independently</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Independent Consultant &amp; Solutions Architect</dd></div>
+        <div><dt>Engagement</dt><dd>Feb 2026 &ndash; Present</dd></div>
+        <div><dt>Discipline</dt><dd>Architecture &middot; Integration &middot; Development</dd></div>
+      </dl>
+      <div class="chips"><span>Workfront</span><span>Salesforce</span><span>Snowflake</span><span>REST</span><span>Event-driven</span></div>
+      <a class="visit" href="https://www.stevenjhubbard.com/" target="_blank" rel="noopener">Visit site <i>&rarr;</i></a>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 03 · Eye Appeal ═══════════════════════════════════ -->
+<article class="entry" data-cat="architecture development design integration">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">03</span><hr></div>
+      <h3>Eye Appeal Inc.</h3>
+      <p class="entry-role"><b>Senior Architect &amp; Developer</b> &middot; Mar 2025 &ndash; Feb 2026</p>
+    </div>
+    <p class="lede">A collectible grading platform for sports card collectors &mdash; an AI-scored reveal game, a proprietary grading metric, and a registry deep enough to be trusted as a system of record.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/eyeappeal.webp" srcset="assets/webp/eyeappeal@sm.webp 1000w, assets/webp/eyeappeal.webp 2000w" sizes="100vw" alt="The Eye Appeal homepage in black and acid green: the headline “The collectors’ voice. The market’s verdict.” above buttons reading “Blur My Card” and “Play Rate-To-Reveal”, with a video panel below and a navigation bar carrying Feed, Collectibles, Review, Registry, Council, Community, Auctions." width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">The SvelteKit build, live. The two buttons in the hero are the whole product thesis — grading as a game you play rather than a report you receive — and the registry navigation behind them is what makes people trust the score.</p>
+      <p class="cap-src"><span class="badge live">Live</span> <a href="https://eyeappealinc.com" target="_blank" rel="noopener">eyeappealinc.com</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Three things had to work together, and each one undermined the others if built carelessly: an AI-powered <strong>Rate-to-Reveal</strong> game, the proprietary <strong>EyeQ+</strong> scoring metric, and a global registry that collectors would trust as a system of record. A grading platform lives or dies on whether people believe the number.</p>
+      <p>I architected the API integrations and workflow pipelines connecting internal systems to third-party platforms. Each one was designed as a reusable pattern rather than a one-off, which is the difference between the second integration taking days and taking weeks.</p>
+      <ul>
+        <li>Cloud-hosted SvelteKit application on Vercel at <strong>Lighthouse 95+</strong> with sub-second load times</li>
+        <li>Zero-downtime weekly production releases on two-week Agile iterations</li>
+        <li>Automated QA and data-validation folded into the delivery pipeline &mdash; <strong>30% less manual development effort</strong></li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Senior Architect &amp; Developer</dd></div>
+        <div><dt>Engagement</dt><dd>Mar 2025 &ndash; Feb 2026</dd></div>
+        <div><dt>Discipline</dt><dd>Architecture &middot; Development &middot; Design &middot; Integration</dd></div>
+      </dl>
+      <div class="chips"><span>SvelteKit</span><span>TypeScript</span><span>Vercel</span><span>CI/CD</span><span>QA automation</span><span>AI</span></div>
+      <a class="visit" href="https://eyeappealinc.com" target="_blank" rel="noopener">Visit site <i>&rarr;</i></a>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 04 · Horizon Media ════════════════════════════════ -->
+<article class="entry" data-cat="architecture cms integration security">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">04</span><hr></div>
+      <h3>Horizon Media</h3>
+      <p class="entry-role"><b>Web Director &amp; Solutions Architect</b> &middot; Oct 2024 &ndash; Dec 2025</p>
+    </div>
+    <p class="lede">Enterprise web architecture for the largest independent media agency in the US &mdash; and the internal architecture authority across its AEM and WordPress estate.</p>
+  </div>
+  <figure>
+    <div class="bleed">
+      <div class="shot--gone" role="img" aria-label="No usable archive capture of horizonmedia.com survives. Client-rendered application">
+        <div class="gone-in">
+          <span class="tag">Client-rendered &middot; no capture renders</span>
+          <p class="domain">horizonmedia.com</p>
+          <p class="why">Captured in November 2024 at 34 KB: forty-one script tags and not a single image element. The archive kept the shell, but the JavaScript that draws the page will never run again against servers that are no longer there.</p>
+        </div>
+      </div>
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">The most recent engagement in this archive and one of the least recoverable, which is less of a paradox than it sounds. A client-rendered site archives as an empty shell; the older the site, the likelier its HTML still stands alone.</p>
+      <p class="cap-src"><span class="badge arch">No capture</span> <a href="https://web.archive.org/web/2025/https://www.horizonmedia.com/" target="_blank" rel="noopener">Archive record &middot; 2025</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>I led enterprise web architecture, AI-driven analytics, and performance work for major clients including <strong>United Healthcare</strong>, improving performance, accessibility, and engagement across their digital platforms. Healthcare is where accessibility stops being a checklist item and starts being the product.</p>
+      <p>The larger job was internal. I served as the architecture authority across the organization&rsquo;s AEM and WordPress ecosystems &mdash; governance standards, design patterns, component libraries, and the performance and security benchmarks every property was held to. That work is invisible when it goes well, which is the point.</p>
+      <p>Underneath it, the NetSuite&ndash;AEM ERP integration unified billing, content, and financial reporting data across on-premise and cloud systems, and Snowflake became the governed reporting layer for cross-platform campaign and financial data. Both replaced processes that had previously run on spreadsheets and trust.</p>
+      <ul>
+        <li>AI-driven analytics integration &mdash; <strong>campaign precision up 15%</strong></li>
+        <li>WordPress systems refactored for <strong>25% more speed and engagement</strong></li>
+        <li>Developer workflows streamlined for <strong>35% better efficiency</strong></li>
+        <li>Architecture options, risk assessments, and roadmap tradeoffs presented to executive stakeholders to drive platform investment decisions</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Web Director &amp; Solutions Architect</dd></div>
+        <div><dt>Engagement</dt><dd>Oct 2024 &ndash; Dec 2025</dd></div>
+        <div><dt>Discipline</dt><dd>Architecture &middot; CMS &middot; Integration &middot; Security</dd></div>
+      </dl>
+      <div class="chips"><span>Adobe Experience Manager</span><span>NetSuite</span><span>Snowflake</span><span>WordPress</span><span>AI analytics</span><span>Governance</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 05 · Coup D'Etat ══════════════════════════════════ -->
+<article class="entry" data-cat="design development ecommerce architecture">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">05</span><hr></div>
+      <h3>Coup D&rsquo;Etat</h3>
+      <p class="entry-role"><b>Senior Architect &amp; Developer</b> &middot; Contract &middot; Jan 2019 &ndash; Mar 2025</p>
+    </div>
+    <p class="lede">Six years with one client &mdash; long enough to stop shipping features and start shipping the standards everything else got built against.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/coupdetat.webp" srcset="assets/webp/coupdetat@sm.webp 1000w, assets/webp/coupdetat.webp 2000w" sizes="100vw" alt="The Coup D’Etat homepage: a photographed interior in warm afternoon light — a sculptural black side table, a yellow floor lamp and an abstract painting above a walnut credenza — with the caption “Mood of the Moment” and an “Explore Gallery” button. A cookie consent panel sits over the lower right corner." width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">Six years of work, still live. A showroom catalogue where the photograph is the product, which is why the gallery experience was custom rather than a plugin. The consent panel is the archive being honest about 2020s web.</p>
+      <p class="cap-src"><span class="badge live">Live</span> <a href="https://coupdetatsf.com/" target="_blank" rel="noopener">coupdetatsf.com</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>A San Francisco luxury design showroom, and the longest single engagement of my career. Six years in, the useful work stopped being features and became standards: I established the architectural, security, and performance benchmarks adopted across all client engagements, and built the Storybook component library the team worked from.</p>
+      <p>I led platform discovery and requirements sessions with business and technical stakeholders, producing technical context diagrams and as-is/to-be architecture to align people <em>before</em> the build rather than during it. Alongside that, I supported multiple concurrent Agile delivery teams through sprint planning, code review, and enforcement of the quality metrics.</p>
+      <p>On the storefront: a custom WooCommerce module, a bespoke gallery experience for a catalogue where the photography <em>is</em> the product, and optimization driven by analytics rather than opinion.</p>
+      <ul>
+        <li><strong>40% increase in online sales efficiency</strong> from the custom WooCommerce module</li>
+        <li><strong>20% lift in CTAs</strong> from streamlined product displays</li>
+        <li><strong>35% better engagement and 20% lower bounce</strong>, guided by Google Analytics</li>
+        <li><strong>30% shorter deployment cycles</strong> from the Storybook library, which also enabled pre-production stakeholder sign-off</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Senior Architect &amp; Developer</dd></div>
+        <div><dt>Engagement</dt><dd>Jan 2019 &ndash; Mar 2025</dd></div>
+        <div><dt>Discipline</dt><dd>Design &middot; Development &middot; Ecommerce &middot; Architecture</dd></div>
+      </dl>
+      <div class="chips"><span>WooCommerce</span><span>React</span><span>Storybook</span><span>Agile</span><span>Google Analytics</span></div>
+      <a class="visit" href="https://coupdetatsf.com/" target="_blank" rel="noopener">Visit site <i>&rarr;</i></a>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 06 · Lexmark ══════════════════════════════════════ -->
+<article class="entry" data-cat="architecture cms ecommerce development integration">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">06</span><hr></div>
+      <h3>Lexmark</h3>
+      <p class="entry-role"><b>Front-End AEM Developer &amp; Magento Architect</b> &middot; Oct 2022 &ndash; Mar 2023</p>
+    </div>
+    <p class="lede">Making AEM and Magento share a customer without either one noticing &mdash; content from one, inventory and cart from the other, no visible seam.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/lexmark.webp" srcset="assets/webp/lexmark@sm.webp 1000w, assets/webp/lexmark.webp 2000w" sizes="100vw" alt="The Lexmark homepage in December 2022: a green-and-white layout with a “Lexmark OnePrint — Set it and forget it” panel over a photograph of someone working at a sunlit desk, promotional tiles for cloud print migration and supplies below, and the line “Lexmark delivers higher performance at lower cost.”" width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">Captured inside the engagement window. The OnePrint subscription panel in the hero is the module I rebuilt to carry custom toner colour options — the configuration matrix behind that offer is where the actual complexity sat.</p>
+      <p class="cap-src"><span class="badge arch">Archived</span> <a href="https://web.archive.org/web/2022/https://www.lexmark.com/" target="_blank" rel="noopener">Wayback &middot; 2022</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Adobe Experience Manager and Magento are both entirely convinced they own the customer experience. The integration &mdash; built as custom plugins &mdash; let AEM handle content and Magento handle inventory and cart, without the seam showing to anyone actually shopping.</p>
+      <p>I also rebuilt the Magento 2.4 subscription module to offer custom toner colour options, which sounds small and was not: toner subscriptions are the business model, and the configuration matrix behind that dropdown is where the complexity lives. React components fetch real-time printer information via API alongside it, and I built custom AEM components against existing wireframes.</p>
+      <ul>
+        <li><strong>30% increase in user engagement</strong> and a <strong>15% higher conversion rate</strong> from the AEM&ndash;Magento integration</li>
+        <li><strong>35% faster page loads</strong> from refactored CMS components, feeding a 20% gain in satisfaction scores</li>
+        <li><strong>20% higher satisfaction</strong> and 10% more subscription sales from the module rebuild</li>
+        <li><strong>20% less manual testing overhead</strong> from automated QA regression coverage</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Front-End AEM Developer &amp; Magento Architect</dd></div>
+        <div><dt>Engagement</dt><dd>Oct 2022 &ndash; Mar 2023</dd></div>
+        <div><dt>Discipline</dt><dd>Architecture &middot; CMS &middot; Ecommerce &middot; Development</dd></div>
+      </dl>
+      <div class="chips"><span>Adobe Experience Manager</span><span>Magento 2.4</span><span>React</span><span>REST</span><span>QA automation</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 07 · TiVo ═════════════════════════════════════════ -->
+<article class="entry" data-cat="ecommerce architecture integration cms">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">07</span><hr></div>
+      <h3>TiVo</h3>
+      <p class="entry-role"><b>Senior Ecommerce Architect</b> &middot; Dec 2020 &ndash; May 2022</p>
+    </div>
+    <p class="lede">The Magento Enterprise 2.4 migration was the visible half. The harder half was WebMethods, ERP, and getting POS, order, and product data to agree with each other.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/tivo.webp" srcset="assets/webp/tivo@sm.webp 1000w, assets/webp/tivo.webp 2000w" sizes="100vw" alt="The TiVo homepage in November 2021: a dark product photograph of the TiVo Stream 4K dongle and remote in front of a wall-mounted television showing the TiVo interface, captioned “Excellent media streamer” with the line “PCMag loves TiVo Stream 4K. You will too.”" width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">The Magento Enterprise 2.4 storefront, mid-engagement. What the page does not show is the reason it works: WebMethods and ERP integration keeping POS, order and product data agreeing with each other underneath.</p>
+      <p class="cap-src"><span class="badge arch">Archived</span> <a href="https://web.archive.org/web/2021/https://www.tivo.com/" target="_blank" rel="noopener">Wayback &middot; 2021</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>I spearheaded the transition to Magento Enterprise 2.4 &mdash; stakeholder coordination, timeline management, and a migration that landed without drama. That was the part the business could see.</p>
+      <p>Underneath it: WebMethods and ERP integrations in Java and SOAP/XML against SQL Server, unifying POS, order, and product data across commerce and content systems while legacy on-premise CMS platforms moved to cloud-hosted WordPress, Magento, and AEM. POS and transaction data fed Snowflake to drive segmentation modelling in Salesforce Commerce Cloud &mdash; better targeting precision, less audience overlap between campaigns that had previously been competing for the same person.</p>
+      <ul>
+        <li><strong>Conversions up 18%</strong> and <strong>cart abandonment down 15%</strong> via AEM personalization and targeted campaigns</li>
+        <li><strong>30% less manual financial reconciliation</strong> from the WebMethods and ERP integration</li>
+        <li>Marketo and Litmus integrated with AEM-driven properties &mdash; send-time optimization and A/B testing</li>
+        <li>Legacy payment systems consolidated onto a single Braintree integration</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Senior Ecommerce Architect</dd></div>
+        <div><dt>Engagement</dt><dd>Dec 2020 &ndash; May 2022</dd></div>
+        <div><dt>Discipline</dt><dd>Ecommerce &middot; Architecture &middot; Integration &middot; CMS</dd></div>
+      </dl>
+      <div class="chips"><span>Magento EE 2.4</span><span>WebMethods</span><span>Java</span><span>SOAP/XML</span><span>SQL Server</span><span>Snowflake</span><span>Marketo</span><span>Braintree</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 08 · L&L Supply ═══════════════════════════════════ -->
+<article class="entry" data-cat="ecommerce architecture design development">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">08</span><hr></div>
+      <h3>L&amp;L Supply</h3>
+      <p class="entry-role"><b>Ecommerce Architect &amp; Senior Developer</b> &middot; Feb 2020 &ndash; Mar 2021</p>
+    </div>
+    <p class="lede">10,000 products and half a million customer records moved off a legacy platform onto Magento 2.3 without losing a row. Data migrations are where ecommerce projects quietly fail.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/llsupply.webp" srcset="assets/webp/llsupply@sm.webp 1000w, assets/webp/llsupply.webp 1300w" sizes="100vw" alt="The L&amp;L Supply homepage: the L&amp;L Home &amp; Garden Distributor logo above a Store, Vendors, Reps, Show and About Us menu, over a densely planted spring garden photograph headlined &ldquo;The West Coast&rsquo;s leading full line home &amp; garden distributor&rdquo;, with a blue band below reading &ldquo;Providing the brands to grow your business&rdquo;." width="1300" height="869" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">The storefront that received 10,000 products and 500,000 customer records off the legacy platform. The llsupply.com domain now belongs to an unrelated Antiguan distributor of the same name, so the archive is no help here &mdash; this image is my own.</p>
+      <p class="cap-src"><span class="badge arch">Own archive</span> <span>Domain since reassigned</span></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>A CMS and commerce migration onto WordPress and Magento 2.3, carrying <strong>10,000+ custom and simple products</strong> and <strong>500,000 customer records</strong> across. A dropped row in that import is not a statistic, it is a long-standing customer who cannot log in and does not call to tell you &mdash; they just leave.</p>
+      <p>I also consolidated a tangle of legacy payment processors onto a single Braintree integration, and put Git across environments in a shop that had been deploying without it.</p>
+      <p>The part I am most pleased with is the least technical: I mentored a five-person development team through PHP, WordPress, and component architecture, then wrote down the standards so the improvement outlasted the engagement.</p>
+      <ul>
+        <li><strong>20% improvement in site performance</strong> and a lift in ecommerce conversion</li>
+        <li><strong>30% higher team productivity and code quality</strong> after mentoring</li>
+        <li><strong>40% faster onboarding</strong> for new developers from code review standards and documentation templates</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Ecommerce Architect &amp; Senior Developer</dd></div>
+        <div><dt>Engagement</dt><dd>Feb 2020 &ndash; Mar 2021</dd></div>
+        <div><dt>Discipline</dt><dd>Ecommerce &middot; Architecture &middot; Design &middot; Development</dd></div>
+      </dl>
+      <div class="chips"><span>Magento 2.3</span><span>WordPress</span><span>PHP</span><span>Git</span><span>Braintree</span><span>Data migration</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 09 · iRhythm ══════════════════════════════════════ -->
+<article class="entry" data-cat="development cms integration">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">09</span><hr></div>
+      <h3>iRhythm Technologies</h3>
+      <p class="entry-role"><b>Senior HubSpot Developer</b> &middot; Jan 2019 &ndash; Dec 2019</p>
+    </div>
+    <p class="lede">Digital health, where the conversion event is a patient finding a cardiologist who takes their insurance. Landing pages, an API-driven physician locator, and the email program around them.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/irhythm.webp" srcset="assets/webp/irhythm@sm.webp 1000w, assets/webp/irhythm.webp 2000w" sizes="100vw" alt="The iRhythm homepage in June 2019: a teal hero reading &ldquo;Zio by iRhythm &mdash; definitive arrhythmia detection, superior clinical accuracy&rdquo; with a Learn More button, above a section headed &ldquo;Certainty in a single test&rdquo; describing up to 14 days of uninterrupted cardiac monitoring." width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">The marketing site as it stood during the engagement. Two audiences share one page &mdash; For Patients and For Healthcare Professionals sit side by side in the navigation &mdash; which is why the physician locator had to serve a worried patient and a referring cardiologist at once.</p>
+      <p class="cap-src"><span class="badge arch">Archived</span> <a href="https://web.archive.org/web/2019/https://www.irhythmtech.com/" target="_blank" rel="noopener">Wayback &middot; 2019</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>iRhythm makes the Zio patch &mdash; a wearable cardiac monitor. The marketing site&rsquo;s job is to move a worried person from &ldquo;my doctor mentioned this&rdquo; to an actual appointment, which makes the physician locator the most important thing on it.</p>
+      <p>I built that as an API-driven application rather than a static list, so it stayed correct as the provider network changed. Around it: customized HubSpot landing pages and modules, and direct and marketing email templates built to survive the rendering quirks of every client a fifty-year-old patient might be reading in.</p>
+      <ul>
+        <li><strong>30% boost in lead conversions</strong> from the custom HubSpot landing pages and modules</li>
+        <li><strong>23% longer visit duration</strong> from the API-driven physician locator</li>
+        <li><strong>38% lift in opens and click-through</strong> from the redesigned email templates</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Senior HubSpot Developer</dd></div>
+        <div><dt>Engagement</dt><dd>Jan 2019 &ndash; Dec 2019</dd></div>
+        <div><dt>Discipline</dt><dd>Development &middot; CMS &middot; Integration</dd></div>
+      </dl>
+      <div class="chips"><span>HubSpot</span><span>REST</span><span>Email templates</span><span>Landing pages</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 10 · Ten-X ════════════════════════════════════════ -->
+<article class="entry" data-cat="cms development security architecture">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">10</span><hr></div>
+      <h3>Ten-X</h3>
+      <p class="entry-role"><b>Senior WordPress Developer</b> &middot; Sep 2015 &ndash; Jan 2018</p>
+    </div>
+    <p class="lede">Commercial real estate moving to online auction. Platform enhancements, an SEO program that paid, and a release process that stopped depending on someone remembering the steps.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/tenx.webp" srcset="assets/webp/tenx@sm.webp 1000w, assets/webp/tenx.webp 2000w" sizes="100vw" alt="The Ten-X homepage in December 2016: a photograph of a man on a phone in a glass-walled office, headlined “Where real estate is moving”, above three tiles for Ten-X Commercial, Ten-X Homes and Auction.com, then an “In the News” strip and a four-column footer." width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">The WordPress platform I ran enhancements on. Three brands sharing one chassis is the constraint that shaped everything — including the auto-build deploy that replaced a manual release process.</p>
+      <p class="cap-src"><span class="badge arch">Archived</span> <a href="https://web.archive.org/web/2016/https://www.ten-x.com/" target="_blank" rel="noopener">Wayback &middot; 2016</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>A property marketplace built on the bet that commercial real estate would trade online. I led the team meetings driving WordPress platform enhancements &mdash; the work came out of those sessions rather than off a ticket queue &mdash; and contributed to the technical specifications and architecture design alongside building it.</p>
+      <p>The deployment side mattered as much as the features. I deployed auto-build procedures to production with real testing and validation, replacing a release process that worked fine right up until the person who knew it took a holiday.</p>
+      <ul>
+        <li><strong>35% increase in conversions</strong> from the SEO program</li>
+        <li><strong>25% more site traffic</strong> from platform enhancements</li>
+        <li>Automated build and deploy to production servers with rigorous testing and validation</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Senior WordPress Developer</dd></div>
+        <div><dt>Engagement</dt><dd>Sep 2015 &ndash; Jan 2018</dd></div>
+        <div><dt>Discipline</dt><dd>CMS &middot; Development &middot; Security &middot; Architecture</dd></div>
+      </dl>
+      <div class="chips"><span>WordPress</span><span>SEO</span><span>CI/CD</span><span>Auto-build</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 11 · Chrome Industries ════════════════════════════ -->
+<article class="entry" data-cat="ecommerce development design security">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">11</span><hr></div>
+      <h3>Chrome Industries</h3>
+      <p class="entry-role"><b>Magento Developer</b> &middot; 2014 &ndash; 2015</p>
+    </div>
+    <p class="lede">Messenger bags for people who ride in the rain. Custom product and category layouts, a responsive rebuild, and PCI compliance carried from audit to clean scan.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/chrome.webp" srcset="assets/webp/chrome@sm.webp 1000w, assets/webp/chrome.webp 2000w" sizes="100vw" alt="The Chrome Industries homepage in June 2015: a red banner announcing “Summer Steal — up to 70% off”, a hero of a cyclist and bike, and a grid of product tiles — Shop Sale Shoes, Dickies x Chrome, Seat Bags, New 50/50 Forged Rubber, New Woven Work Shirts — under the Chrome knight logo." width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">The Magento storefront I built custom product, category and landing page layouts for. 2014 was the year mobile stopped being optional; the responsive rebuild took a quarter off the bounce rate.</p>
+      <p class="cap-src"><span class="badge arch">Archived</span> <a href="https://web.archive.org/web/2015/http://www.chromeindustries.com/" target="_blank" rel="noopener">Wayback &middot; 2015</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>A San Francisco cycling and bag brand with a genuinely devoted customer base, which raises the stakes on the product page: these buyers know the seatbelt buckle by name and will notice if you get the spec wrong.</p>
+      <p>I built custom product detail, category, and landing page layouts, and wrote custom JavaScript and CSS to get the weight down. 2014 was also the year mobile stopped being optional, and the responsive build was the single biggest lever on bounce.</p>
+      <p>Separately, I led the PCI self-assessment questionnaire and scan through to full compliance &mdash; unglamorous, non-negotiable, and the kind of thing that only becomes visible when it has not been done.</p>
+      <ul>
+        <li><strong>Add-to-cart up 20%</strong> and <strong>retention up 40%</strong> from the custom PDP, category, and landing page layouts</li>
+        <li><strong>30% faster page loads</strong> from custom JavaScript and CSS</li>
+        <li><strong>25% lower bounce</strong> from the responsive build</li>
+        <li>PCI SAQ and scan led through to full compliance</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Magento Developer</dd></div>
+        <div><dt>Engagement</dt><dd>2014 &ndash; 2015</dd></div>
+        <div><dt>Discipline</dt><dd>Ecommerce &middot; Development &middot; Design &middot; Security</dd></div>
+      </dl>
+      <div class="chips"><span>Magento</span><span>Responsive</span><span>JavaScript</span><span>CSS</span><span>PCI compliance</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 12 · Thismoment ═══════════════════════════════════ -->
+<article class="entry" data-cat="development integration cms">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">12</span><hr></div>
+      <h3>Thismoment</h3>
+      <p class="entry-role"><b>Software &amp; Production Engineer</b> &middot; 2013 &ndash; 2014</p>
+    </div>
+    <p class="lede">User-generated content platforms and video tooling for Fortune 500 brands &mdash; back when &ldquo;brand content hub&rdquo; meant somebody had to build the hub.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/thismoment.webp" srcset="assets/webp/thismoment@sm.webp 1000w, assets/webp/thismoment.webp 2000w" sizes="100vw" alt="The Thismoment homepage in March 2014: a San Francisco street scene with the Transamerica Pyramid in the distance, headlined “Be your own brand DJ.”, above a grey band of client logos — Sony, Kia, Microsoft, Paramount, EA, Coca-Cola, Levi’s, Oakley." width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">The platform company whose UGC tooling and video player I worked on. That logo row is the reason buffering mattered so much: a campaign launch for any one of them looked indistinguishable from an attack.</p>
+      <p class="cap-src"><span class="badge arch">Archived</span> <a href="https://web.archive.org/web/2014/https://www.thismoment.com/" target="_blank" rel="noopener">Wayback &middot; 2014</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Thismoment built content marketing platforms for brands including Coca-Cola, Procter &amp; Gamble, Frito-Lay, and AT&amp;T. My work was the custom UGC platforms and the video tooling underneath them &mdash; collection, moderation, and playback at campaign scale, where a successful launch is indistinguishable from a denial-of-service attack.</p>
+      <p>The rebuild I remember is the video player. Buffering is the metric nobody puts in the brief and everybody notices; halving it did more for engagement than any feature shipped that quarter.</p>
+      <ul>
+        <li>Custom UGC platforms and video tooling for Fortune 500 brands</li>
+        <li>Video player rebuild <strong>cutting buffering 50%</strong></li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Software &amp; Production Engineer</dd></div>
+        <div><dt>Engagement</dt><dd>2013 &ndash; 2014</dd></div>
+        <div><dt>Discipline</dt><dd>Development &middot; Integration &middot; CMS</dd></div>
+      </dl>
+      <div class="chips"><span>JavaScript</span><span>Video</span><span>UGC platforms</span><span>APIs</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 13 · Prima Studio ═════════════════════════════════ -->
+<article class="entry" data-cat="ecommerce architecture design development">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">13</span><hr></div>
+      <h3>Prima Studio</h3>
+      <p class="entry-role"><b>Ecommerce Architect &amp; Lead Developer</b> &middot; Dec 2011 &ndash; Sep 2013</p>
+    </div>
+    <p class="lede">Magento front and back end, a custom HTML5 video player built when that was still an argument, and a 70% performance gain over stock.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/prima.webp" srcset="assets/webp/prima@sm.webp 1000w, assets/webp/prima.webp 1300w" sizes="100vw" alt="The Prima Studio storefront: a dancer in the splits on a studio floor under a magenta-and-grey layout, with hotspot labels for “dancer bra $54”, “clara tee $45” and “barre legging $90”, above panels for events and trunk shows, Prima Faces, and tips and videos." width="1300" height="869" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">Dancewear ecommerce on Magento, front and back end. Note the shoppable hotspots and the video panels — both custom, and both reasons the stock platform had to get 70% faster before any of it was usable.</p>
+      <p class="cap-src"><span class="badge arch">Own archive</span> <span>Domain since reassigned</span></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Stock Magento in 2012 was slow, and the industry consensus was that this was simply the price of Magento. It did not have to be. I rebuilt front and back end around that assumption and got a <strong>70% performance gain</strong> out of it.</p>
+      <p>The custom HTML5 video player dates the project precisely: this was the moment Flash was dying but not yet dead, and building native video meant handling every browser&rsquo;s idea of a codec yourself. Conversion instrumentation ran through the whole funnel, so the optimization work had numbers behind it rather than instinct.</p>
+      <ul>
+        <li><strong>70% performance gain</strong> over stock Magento</li>
+        <li>Custom HTML5 video player, built ahead of broad browser consensus</li>
+        <li>Analytics and conversion instrumentation across the full funnel</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Ecommerce Architect &amp; Lead Developer</dd></div>
+        <div><dt>Engagement</dt><dd>Dec 2011 &ndash; Sep 2013</dd></div>
+        <div><dt>Discipline</dt><dd>Ecommerce &middot; Architecture &middot; Design &middot; Development</dd></div>
+      </dl>
+      <div class="chips"><span>Magento</span><span>HTML5 video</span><span>Analytics</span><span>Performance</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 14 · Urban Air Market ═════════════════════════════ -->
+<article class="entry" data-cat="design architecture cms development">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">14</span><hr></div>
+      <h3>Urban Air Market</h3>
+      <p class="entry-role"><b>Architect, Developer &amp; Creative Director</b> &middot; 2011 &ndash; 2013</p>
+    </div>
+    <p class="lede">A sustainable design marketplace, taken from identity through print, email, and CMS build &mdash; one of the few engagements where I directed the creative and then had to go build it.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/urbanair.webp" srcset="assets/webp/urbanair@sm.webp 1000w, assets/webp/urbanair.webp 2000w" sizes="100vw" alt="The Urban Air Market homepage in June 2013: a concrete-texture background with a photograph of Mount Hood above the Portland skyline, a Portland event description, and three tiles reading “RSVP to attend Urban Air Market”, “Apply to be a designer” and “Reserve your booth now”, above a green call to action." width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">Identity, print, email and CMS, all mine. Three tiles for three completely different audiences — shoppers, designers and vendors — which is the whole information architecture problem of a marketplace in one screen.</p>
+      <p class="cap-src"><span class="badge arch">Archived</span> <a href="https://web.archive.org/web/2013/http://urbanairmarket.com/" target="_blank" rel="noopener">Wayback &middot; 2013</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Urban Air Market ran pop-up marketplaces for independent sustainable designers across the Bay Area. The brand had to hold up across a website, printed collateral handed out at the events, and the email program that filled them &mdash; three media that punish a logo in three different ways.</p>
+      <p>I directed the creative and built it: full site, print and email identity, CMS front and back end, and the SEO program. Being on the hook for the build is a useful constraint on the art direction; you stop specifying things you know you will resent implementing.</p>
+      <ul>
+        <li>Full identity across site, print, and email</li>
+        <li>CMS front and back end</li>
+        <li>SEO program, and an <strong>80% performance gain</strong> over standard builds of the period</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Architect, Developer &amp; Creative Director</dd></div>
+        <div><dt>Engagement</dt><dd>2011 &ndash; 2013</dd></div>
+        <div><dt>Discipline</dt><dd>Design &middot; Architecture &middot; CMS &middot; Development</dd></div>
+      </dl>
+      <div class="chips"><span>CMS</span><span>Identity</span><span>Print</span><span>Email</span><span>SEO</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 15 · Euro RSCG ════════════════════════════════════ -->
+<article class="entry" data-cat="development design">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">15</span><hr></div>
+      <h3>Euro RSCG</h3>
+      <p class="entry-role"><b>Lead Developer</b> &middot; 2011</p>
+    </div>
+    <p class="lede">Porting a Flash game to HTML5 and jQuery Mobile in the year that decision was still contentious &mdash; plus the companion iOS and Android apps.</p>
+  </div>
+  <figure>
+    <div class="bleed">
+      <div class="shot--gone" role="img" aria-label="No usable archive capture of eurorscg.com survives. Flash">
+        <div class="gone-in">
+          <span class="tag">Flash &middot; no capture renders</span>
+          <p class="domain">eurorscg.com</p>
+          <p class="why">The 2010 capture is six SWF files and no HTML to speak of. Flash has been dead since 2020, so nothing renders — which is a fitting artefact of a project whose whole brief was getting a game off Flash.</p>
+        </div>
+      </div>
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">Nothing here survives in a form a browser can open. The agency&rsquo;s own site was Flash &mdash; a tidy irony, given the brief was porting their client&rsquo;s Flash game to HTML5 because phones had stopped playing it.</p>
+      <p class="cap-src"><span class="badge arch">No capture</span> <a href="https://web.archive.org/web/2011/http://eurorscg.com/" target="_blank" rel="noopener">Archive record &middot; 2011</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Euro RSCG was a global agency network &mdash; it became Havas Worldwide shortly after. The brief was a Flash-based game that needed to run on phones, which in 2011 meant it needed to stop being Flash.</p>
+      <p>I ported it to HTML5 and jQuery Mobile and halved the load time in the process, then built the companion iOS and Android apps. Apple had published the &ldquo;Thoughts on Flash&rdquo; letter about a year earlier and most agencies were still arguing; this was one of the projects where the argument had already been settled by the client&rsquo;s analytics.</p>
+      <ul>
+        <li>Flash game ported to HTML5 and jQuery Mobile, <strong>halving load times</strong></li>
+        <li>Companion iOS and Android applications</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Lead Developer</dd></div>
+        <div><dt>Engagement</dt><dd>2011</dd></div>
+        <div><dt>Discipline</dt><dd>Development &middot; Design</dd></div>
+      </dl>
+      <div class="chips"><span>HTML5</span><span>jQuery Mobile</span><span>iOS</span><span>Android</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 16 · Moss Outdoor ═════════════════════════════════ -->
+<article class="entry" data-cat="design cms ecommerce development">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">16</span><hr></div>
+      <h3>Moss Outdoor</h3>
+      <p class="entry-role"><b>Lead Developer</b> &middot; 2010 &ndash; 2011</p>
+    </div>
+    <p class="lede">UI design through CMS build and commerce integration &mdash; and an SEO program that lifted visibility 220%.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/moss.webp" srcset="assets/webp/moss@sm.webp 1000w, assets/webp/moss.webp 2000w" sizes="100vw" alt="The Moss Outdoor homepage in February 2011: a dark green sidebar carrying the Moss logo and search, beside a grid of outdoor-living photography — a black lounge chair on a deck, loungers on a hillside, a moss-covered banner reading “Discover the alluring world of luxury outdoor living”, and a grill — with a “Watch us grow!” newsletter panel below." width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">UI design through CMS build and commerce integration. The 220% visibility lift came from making this catalogue legible to search engines at all — most of the win was structural, not clever.</p>
+      <p class="cap-src"><span class="badge arch">Archived</span> <a href="https://web.archive.org/web/2011/http://www.mossoutdoor.com/" target="_blank" rel="noopener">Wayback &middot; 2011</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Outdoor furniture, which is a catalogue where the photography carries the sale and the specification table closes it. I took it from UI design through the CMS build and the commerce integration.</p>
+      <p>The SEO program is the number that still surprises people: <strong>220% visibility lift</strong>. That figure is only possible on a site that started with a structural problem &mdash; in this case product content the search engines could not reach. Most of the win was making the catalogue legible rather than anything clever.</p>
+      <ul>
+        <li>UI design through production CMS build</li>
+        <li>Commerce integration</li>
+        <li>SEO program lifting search visibility <strong>220%</strong></li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Lead Developer</dd></div>
+        <div><dt>Engagement</dt><dd>2010 &ndash; 2011</dd></div>
+        <div><dt>Discipline</dt><dd>Design &middot; CMS &middot; Ecommerce &middot; Development</dd></div>
+      </dl>
+      <div class="chips"><span>CMS</span><span>Commerce</span><span>UI design</span><span>SEO</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 17 · Digital Brewing ══════════════════════════════ -->
+<article class="entry" data-cat="development integration design">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">17</span><hr></div>
+      <h3>Digital Brewing Company</h3>
+      <p class="entry-role"><b>Front-End Developer</b> &middot; 2008 &ndash; 2009</p>
+    </div>
+    <p class="lede">Agency campaign builds with third-party data integration, and front-end performance work in an era when that mostly meant fighting your own markup.</p>
+  </div>
+  <figure>
+    <div class="bleed">
+      <div class="shot--gone" role="img" aria-label="No usable archive capture of digitalbrewing.com survives. Flash">
+        <div class="gone-in">
+          <span class="tag">Flash &middot; no capture renders</span>
+          <p class="domain">digitalbrewing.com</p>
+          <p class="why">Archived at 4.8 KB: a Flash shell, no images, no markup. The agency built in Flash and the agency&rsquo;s own site was no exception. Nothing survives that a browser can draw.</p>
+        </div>
+      </div>
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">An agency that built in Flash, archived as a Flash shell. The campaign work behind it is gone the same way; microsites had a shelf life measured in quarters even before the runtime died.</p>
+      <p class="cap-src"><span class="badge arch">No capture</span> <a href="https://web.archive.org/web/2009/http://www.digitalbrewing.com/" target="_blank" rel="noopener">Archive record &middot; 2009</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Client campaign builds on agency timelines, wired to third-party data sources that were rarely documented and never stable. The front-end performance work of 2008 was a different discipline from today&rsquo;s &mdash; no build tools worth the name, no HTTP/2, and a browser matrix that included IE6 whether anyone liked it or not.</p>
+      <ul>
+        <li>Client campaign builds across an agency roster</li>
+        <li>Third-party data integration</li>
+        <li>Front-end performance optimization</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Front-End Developer</dd></div>
+        <div><dt>Engagement</dt><dd>2008 &ndash; 2009</dd></div>
+        <div><dt>Discipline</dt><dd>Development &middot; Integration &middot; Design</dd></div>
+      </dl>
+      <div class="chips"><span>JavaScript</span><span>XHTML/CSS</span><span>Data integration</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 18 · Nimblefish ═══════════════════════════════════ -->
+<article class="entry" data-cat="development cms integration">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">18</span><hr></div>
+      <h3>Nimblefish Technologies</h3>
+      <p class="entry-role"><b>Lead Web Developer</b> &middot; 2002 &ndash; 2008</p>
+    </div>
+    <p class="lede">Six years of web and email builds against a proprietary CMS, in a Linux, Apache and Tomcat environment. The long apprenticeship.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/nimblefish.webp" srcset="assets/webp/nimblefish@sm.webp 1000w, assets/webp/nimblefish.webp 2000w" sizes="100vw" alt="The Nimblefish Technologies homepage in June 2005: a small fixed-width layout with the nimblefish fish logo and the tagline &ldquo;get relevant. get results.&rdquo;, a Solutions / Technology / Company menu, a client strip showing Inktomi, Sony and HP, and a red panel reading &ldquo;the average customer is a myth&rdquo;." width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">Six years building against their proprietary CMS on Linux, Apache and Tomcat. The capture is enlarged &mdash; the page is a fixed-width 2005 layout and occupies about a third of a modern window.</p>
+      <p class="cap-src"><span class="badge arch">Archived</span> <a href="https://web.archive.org/web/2007/http://www.nimblefish.com/" target="_blank" rel="noopener">Wayback &middot; 2007</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Nimblefish ran marketing automation and variable-data campaigns for enterprise clients &mdash; personalized web and print at volume, years before &ldquo;marketing automation&rdquo; was a category with a Gartner quadrant.</p>
+      <p>Everything was built against a proprietary CMS on Linux, Apache, and Tomcat. Working inside somebody else&rsquo;s CMS for six years teaches you the thing no framework tutorial does: what a platform&rsquo;s assumptions cost you three years later, and how to design so the answer is &ldquo;less than it could have.&rdquo;</p>
+      <ul>
+        <li>Web and email builds against a proprietary CMS</li>
+        <li>Linux / Apache / Tomcat production environment</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Lead Web Developer</dd></div>
+        <div><dt>Engagement</dt><dd>2002 &ndash; 2008</dd></div>
+        <div><dt>Discipline</dt><dd>Development &middot; CMS &middot; Integration</dd></div>
+      </dl>
+      <div class="chips"><span>Proprietary CMS</span><span>Linux</span><span>Apache</span><span>Tomcat</span><span>JSP</span><span>Email</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 19 · Nationalflashback ════════════════════════════ -->
+<article class="entry" data-cat="design development architecture cms">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">19</span><hr></div>
+      <h3>Nationalflashback</h3>
+      <p class="entry-role"><b>Consultant &amp; Creative Director</b> &middot; 2000 &ndash; 2008</p>
+    </div>
+    <p class="lede">The first independent practice. Eight years serving enterprise, SMB, and agency clients across architecture, build, and creative direction &mdash; where the habit of owning the whole stack started.</p>
+  </div>
+  <figure>
+    <div class="bleed">
+      <div class="shot--gone" role="img" aria-label="No usable archive capture of nationalflashback.com survives. Flash">
+        <div class="gone-in">
+          <span class="tag">Flash &middot; no capture renders</span>
+          <p class="domain">nationalflashback.com</p>
+          <p class="why">The name was not a coincidence. Every capture from 2000 to 2008 is a Flash container, and Flash is gone. Eight years of independent practice with no renderable evidence left.</p>
+        </div>
+      </div>
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">Eight years of independent practice, and no renderable evidence. This is the honest cost of a career that started in 2000 &mdash; the tooling that made the work possible is also what made it unrecoverable.</p>
+      <p class="cap-src"><span class="badge arch">No capture</span> <a href="https://web.archive.org/web/2007/http://www.nationalflashback.com/" target="_blank" rel="noopener">Archive record &middot; 2007</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>My own shop, run for eight years across enterprise, small-business, and agency clients. Architecture, build, and creative direction were not separate offerings so much as the same job seen from different ends &mdash; a small practice does not get to specialize, which turns out to be the most useful training available.</p>
+      <p>Nearly everything from this period is gone from the live web. The capture beside this is what the practice looked like at the time.</p>
+      <ul>
+        <li>Independent practice serving enterprise, SMB, and agency clients</li>
+        <li>Architecture, build, and creative direction across the client roster</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Consultant &amp; Creative Director</dd></div>
+        <div><dt>Engagement</dt><dd>2000 &ndash; 2008</dd></div>
+        <div><dt>Discipline</dt><dd>Design &middot; Development &middot; Architecture &middot; CMS</dd></div>
+      </dl>
+      <div class="chips"><span>Creative direction</span><span>Architecture</span><span>Front end</span><span>CMS</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 20 · Puzzle Theory ════════════════════════════════ -->
+<article class="entry" data-cat="design development">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">20</span><hr></div>
+      <h3>Puzzle Theory</h3>
+      <p class="entry-role"><b>Art Director &amp; Lead Developer</b> &middot; 2002 &ndash; 2005</p>
+    </div>
+    <p class="lede">Site strategy, cross-platform build, and collateral production &mdash; back when &ldquo;cross-platform&rdquo; meant Netscape as well as Internet Explorer.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/puzzletheory.webp" srcset="assets/webp/puzzletheory@sm.webp 1000w, assets/webp/puzzletheory.webp 2000w" sizes="100vw" alt="The puzzletheory.com homepage: an almost entirely black page with the domain set large in grey at the top, two small video thumbnails labelled “reel” and “What Love Is” with their file sizes, and a contact address beside the name “joe plenys”." width="2000" height="1250" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">The earliest surviving capture is from 2011 — six years after the engagement ended. Nothing from 2002–2005 was ever archived, so this is the nearest evidence that exists rather than the site as I built it.</p>
+      <p class="cap-src"><span class="badge arch">Archived</span> <a href="https://web.archive.org/web/2011/http://puzzletheory.com/" target="_blank" rel="noopener">Wayback &middot; capture</a></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Art direction and lead development on the same projects &mdash; site strategy through cross-platform build and printed collateral. The earliest work in this archive, and a reasonable illustration of how much the job has changed: the layout problems of 2003 were solved with tables and spacer GIFs because there was nothing else.</p>
+      <ul>
+        <li>Site strategy and information architecture</li>
+        <li>Cross-platform build</li>
+        <li>Collateral production</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Art Director &amp; Lead Developer</dd></div>
+        <div><dt>Engagement</dt><dd>2002 &ndash; 2005</dd></div>
+        <div><dt>Discipline</dt><dd>Design &middot; Development</dd></div>
+      </dl>
+      <div class="chips"><span>Art direction</span><span>Front end</span><span>Print</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 21 · OdySay ═══════════════════════════════════════ -->
+<article class="entry" data-cat="architecture ecommerce development">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">21</span><hr></div>
+      <h3>OdySay</h3>
+      <p class="entry-role"><b>Architect &amp; Magento Developer</b> &middot; Contract</p>
+    </div>
+    <p class="lede">Catalog structure and checkout flow designed for the business the store would become, not the one it was on launch day.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/odysay.webp" srcset="assets/webp/odysay@sm.webp 1000w, assets/webp/odysay.webp 1300w" sizes="100vw" alt="The OdySay storefront: a soft-focus photograph of a woman in a pale green halter gown standing in tall grass, with a white sidebar carrying the ODYSAY wordmark and a Collection, Shop, About, Contact menu, and a black newsletter panel in the upper right." width="1300" height="869" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">A fashion label on Magento. The full-bleed lookbook photography is the reason the catalog architecture had to be planned for growth — a store this image-heavy gets slow first and unmaintainable second.</p>
+      <p class="cap-src"><span class="badge arch">Own archive</span> <span>Domain since reassigned</span></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Storefront architecture and the Magento build. The catalog structure and checkout flow were designed for what the business would look like after growth &mdash; the difference between a store that scales and one that gets rebuilt in eighteen months by someone cursing your name.</p>
+      <p>Integration work tied the storefront to the systems behind it so inventory, orders, and product data stayed consistent without anyone reconciling spreadsheets on a Friday afternoon.</p>
+      <ul>
+        <li>Catalog and checkout architecture built with growth headroom</li>
+        <li>Third-party integrations designed as reusable patterns</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Architect &amp; Magento Developer</dd></div>
+        <div><dt>Engagement</dt><dd>Contract</dd></div>
+        <div><dt>Discipline</dt><dd>Architecture &middot; Ecommerce &middot; Development</dd></div>
+      </dl>
+      <div class="chips"><span>Magento</span><span>Architecture</span><span>Integrations</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 22 · Terra Firma Music ════════════════════════════ -->
+<article class="entry" data-cat="architecture design development cms">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">22</span><hr></div>
+      <h3>Terra Firma Music</h3>
+      <p class="entry-role"><b>Architect, Designer &amp; Developer</b> &middot; Contract</p>
+    </div>
+    <p class="lede">Identity through build, with a front end tuned around the one constraint every music site ignores: media-heavy pages that still have to load.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/terrafirma.webp" srcset="assets/webp/terrafirma@sm.webp 1000w, assets/webp/terrafirma.webp 1300w" sizes="100vw" alt="The Terra Firma Music homepage: a dusty golden desert scene, figures barely visible through haze, with the Terra Firma logo and satellite-dish mark centred over it. A persistent audio player runs along the bottom with a track cued up, above a navigation bar reading News, Music, Media, Shows, Band, Connect." width="1300" height="869" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">Identity through build. The persistent player at the foot of the page is the whole performance problem in one component — it has to survive navigation without re-buffering, on a page already carrying full-bleed imagery.</p>
+      <p class="cap-src"><span class="badge arch">Own archive</span> <span>No Wayback capture survives</span></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>End to end: identity, design, architecture, and build. Music sites are media-heavy by nature &mdash; artwork, audio, video &mdash; and the usual outcome is a beautiful page that takes eight seconds to become useful, by which point the visitor has gone back to the streaming service.</p>
+      <p>The front end was tuned around that constraint from the start rather than optimized after the fact, which is the only version of performance work that actually holds.</p>
+      <ul>
+        <li>Full identity through production build</li>
+        <li>Media-heavy pages tuned for fast first render</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Architect, Designer &amp; Developer</dd></div>
+        <div><dt>Engagement</dt><dd>Contract</dd></div>
+        <div><dt>Discipline</dt><dd>Architecture &middot; Design &middot; Development &middot; CMS</dd></div>
+      </dl>
+      <div class="chips"><span>Design</span><span>Front end</span><span>CMS</span><span>Performance</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 23 · The Liquor Store SF ══════════════════════════ -->
+<article class="entry" data-cat="architecture design development ecommerce">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">23</span><hr></div>
+      <h3>The Liquor Store SF</h3>
+      <p class="entry-role"><b>Architect, Designer &amp; Developer</b> &middot; Contract</p>
+    </div>
+    <p class="lede">A San Francisco hospitality brand where most traffic arrives on a phone, in low light, standing up. Booking and menus were designed for that first.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/liquorstore.webp" srcset="assets/webp/liquorstore@sm.webp 1000w, assets/webp/liquorstore.webp 1300w" sizes="100vw" alt="The Liquor Store SF homepage: a dark, low-lit kitchen photograph — stockpots, jars and utensils on a counter — under the title “The Liquor Store” in a light serif, above a Mission statement describing an experiential pop-up supper club and a team list headed by Steven Hubbard, Founder and Chef de Cuisine." width="1300" height="869" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">Architecture, design and build. The photography is deliberately dark because the room is — a menu that only reads well in daylight is a menu nobody at the bar can use.</p>
+      <p class="cap-src"><span class="badge arch">Own archive</span> <span>No Wayback capture survives</span></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>Hospitality has a context problem that most responsive design briefs quietly skip: the person reading your menu is holding a drink, the room is dark, and they have about fifteen seconds of patience. Booking and menus had to work in that situation first and look good on a desktop second.</p>
+      <p>Design, architecture, and build were all mine, which meant the responsive behaviour was a design decision made up front rather than a development compromise negotiated at the end.</p>
+      <ul>
+        <li>Mobile-first booking and menu flows</li>
+        <li>Storefront integrated with the brand site</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Architect, Designer &amp; Developer</dd></div>
+        <div><dt>Engagement</dt><dd>Contract</dd></div>
+        <div><dt>Discipline</dt><dd>Architecture &middot; Design &middot; Development &middot; Ecommerce</dd></div>
+      </dl>
+      <div class="chips"><span>Design</span><span>WordPress</span><span>Commerce</span><span>Mobile-first</span></div>
+    </div>
+  </div>
+</article>
+
+<!-- ══ 24 · First Presbyterian Church ════════════════════ -->
+<article class="entry" data-cat="architecture cms security">
+  <div class="entry-head rv">
+    <div>
+      <div class="entry-no"><span class="mono">24</span><hr></div>
+      <h3>First Presbyterian Church</h3>
+      <p class="entry-role"><b>Architect &amp; WordPress Developer</b> &middot; Contract</p>
+    </div>
+    <p class="lede">Structure, accessibility, and hardening for a site whose next maintainers are volunteers. Anything clever enough to need me later was the wrong answer.</p>
+  </div>
+  <figure>
+    <div class="shot bleed">
+      <img src="assets/webp/fpc.webp" srcset="assets/webp/fpc@sm.webp 1000w, assets/webp/fpc.webp 1300w" sizes="100vw" alt="The First Presbyterian Church of Newport, Oregon homepage: a photograph of the sanctuary’s wooden ceiling and organ pipes behind a cross and the words “We Share God’s Word — Caring, Friendly, Open to All”, above a Latest News column and a month calendar widget marked with event dots." width="1300" height="869" loading="lazy" decoding="async">
+    </div>
+    <figcaption class="rv">
+      <p class="cap-text">Restructured for volunteers. The calendar is the reason: it is the one thing on the site that has to be edited every week by somebody who does not want to learn WordPress.</p>
+      <p class="cap-src"><span class="badge arch">Own archive</span> <span>No Wayback capture survives</span></p>
+    </figcaption>
+  </figure>
+  <div class="entry-body">
+    <div class="prose rv">
+      <p>One constraint shaped every decision here: the people maintaining this site after I left are volunteers, not developers. That rules out most of the interesting answers, and it is a genuinely better brief than it sounds &mdash; it forces you to justify complexity to someone who will never read the documentation.</p>
+      <p>Structural and accessibility improvements, plus security hardening on a WordPress install that had accumulated the usual decade of plugin debt.</p>
+      <ul>
+        <li>Restructured for volunteer maintenance</li>
+        <li>Accessibility pass and security hardening</li>
+      </ul>
+    </div>
+    <div class="aside rv">
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Architect &amp; WordPress Developer</dd></div>
+        <div><dt>Engagement</dt><dd>Contract</dd></div>
+        <div><dt>Discipline</dt><dd>Architecture &middot; CMS &middot; Security</dd></div>
+      </dl>
+      <div class="chips"><span>WordPress</span><span>Accessibility</span><span>Hardening</span></div>
+    </div>
+  </div>
+</article>
+
+</div><!-- /#entries -->
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="mono">End of archive</span>
+    <h2 style="margin-top:16px">Something here look<br>like your problem?</h2>
+    <p class="lede">Twenty-five years, and the job has stayed the same: find the seam where the systems don&rsquo;t meet, and close it. Available for remote contract and full-time work.</p>
+    <div class="foot-links">
+      <a class="visit" href="https://www.stevenjhubbard.com/#contact">Get in touch <i>&rarr;</i></a>
+      <a class="visit" href="https://www.stevenjhubbard.com/">Main site <i>&rarr;</i></a>
+    </div>
+    <div class="foot-fine">
+      <span>&copy; Steven Hubbard LLC</span>
+      <span>Archived captures courtesy of the Internet Archive</span>
+      <span>Portland, OR</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* Scroll progress. */
+  var bar = document.getElementById('progress');
+  function progress() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+  }
+  addEventListener('scroll', progress, {passive: true});
+  addEventListener('resize', progress);
+  progress();
+
+  /* Reveal on scroll. Elements are visible by default in CSS for
+     prefers-reduced-motion, so this only ever adds the class. */
+  var io = new IntersectionObserver(function (rows) {
+    rows.forEach(function (r) {
+      if (r.isIntersecting) { r.target.classList.add('in'); io.unobserve(r.target); }
+    });
+  }, {rootMargin: '0px 0px -8% 0px', threshold: 0.06});
+  document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+
+  /* Discipline filter. Hides whole entries; the numbering stays with the
+     project rather than renumbering on filter, so "12" always means
+     Thismoment no matter what you're looking at. */
+  var entries = [].slice.call(document.querySelectorAll('.entry'));
+  var buttons = [].slice.call(document.querySelectorAll('.filters button'));
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.dataset.f;
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      entries.forEach(function (e) {
+        e.hidden = !(f === 'all' || e.dataset.cat.indexOf(f) !== -1);
+      });
+      /* A filter can shorten the page past the current scroll position. */
+      progress();
+    });
+  });
+})();
+</script>

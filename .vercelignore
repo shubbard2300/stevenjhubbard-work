@@ -1,0 +1,7 @@
+assets/raw/
+capture.py
+captures.json
+README.md
+index.md
+.chrome-tmp/
+__pycache__/

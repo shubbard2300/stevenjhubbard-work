@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://work.stevenjhubbard.com/sitemap.xml
