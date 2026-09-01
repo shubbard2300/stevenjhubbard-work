@@ -73,6 +73,10 @@ The 2005 layout is fixed-width and renders about 720px wide inside a 2000px wind
 
 ## Deploy
 
-Its own Vercel project, domain `work.stevenjhubbard.com`. Shares the apex site's GA4 property (`G-TGMML7BB0S`) so the archive reports alongside it instead of as an unattributed domain.
+Its own Vercel project (`stevenjhubbard-work`, team `gamecat2300`), on `work.stevenjhubbard.com`. A push to `main` is a production deploy; there is no staging branch. Deliberately separate from the apex site's project so a push to one never redeploys the other.
+
+DNS needs no manual step — the zone's nameservers are Vercel's, so adding the domain to the project created the record.
+
+Shares the apex site's GA4 property (`G-TGMML7BB0S`) so the archive reports alongside it instead of as an unattributed domain.
 
 © Steven Hubbard LLC. Archived captures courtesy of the Internet Archive. Code is reusable; the written content and résumé detail are not.
