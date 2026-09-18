@@ -54,11 +54,13 @@ The most dangerous failure here is not a missing capture, it is a capture of the
 
 All three use the apex site's images instead. **Do not "fix" these by re-shooting them** — the capture will succeed and be wrong. They are removed from `SHOTS` with a comment saying why.
 
-### Four that cannot be rendered
+### Three that cannot be rendered
 
-Three sites were built entirely in Flash — `eurorscg.com`, `digitalbrewing.com`, `nationalflashback.com` — and archive at 3–5 KB of SWF references with zero image elements. `horizonmedia.com` is a client-rendered application: 34 KB of markup, forty-one script tags, no images, and archived JavaScript that will never hydrate.
+Two sites were built entirely in Flash — `eurorscg.com` and `digitalbrewing.com` — and archive at 3–5 KB of SWF references with zero image elements. `horizonmedia.com` is a client-rendered application: 34 KB of markup, forty-one script tags, no images, and archived JavaScript that will never hydrate.
 
-These four get a `.shot--gone` block instead of an image: the domain, why nothing renders, and a link to the archive record. Substituting a later redesign would have been easy and dishonest.
+These three get a `.shot--gone` block instead of an image: the domain, why nothing renders, and a link to the archive record. Substituting a later redesign would have been easy and dishonest.
+
+`nationalflashback.com` was the fourth. Its 2000–2008 captures are Flash too, but the domain later carried Steven's own portfolio, so `nflashback.webp` is the August 2019 capture of that, and the caption says so rather than passing it off as the original.
 
 ### Two more caveats, stated on the page
 
