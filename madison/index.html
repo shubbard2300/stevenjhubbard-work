@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Madison Equities &middot; 2009</title>
+<!-- The original madisonequities.com SWF (Flash 8, AS2, April 2009), played
+     in Ruffle. Framed by the work page so SWFAddress rewrites this page's
+     hash and title, not the parent's. swfaddress.js (2.2) is patched twice:
+     top -> self for the same reason, and its three load-time eval() calls
+     rewritten, because the site CSP has no 'unsafe-eval'. The evals left are
+     in SWFAddress.popup, which this SWF never calls. Ruffle 0.6's core.ruffle.*.js
+     is patched the same way: ExternalInterface.call built a new Function from
+     the method name; it now walks the dotted name on window instead. Re-apply
+     both patches after any Ruffle upgrade. -->
+<style>
+html,body{margin:0;height:100%;background:#3b3b3b;overflow:hidden}
+ruffle-player{display:block;width:100%;height:100%}
+</style>
+<script src="swfaddress.js?html=true&amp;strict=false"></script>
+<script src="ruffle/ruffle.js"></script>
+</head>
+<body>
+<script>
+window.RufflePlayer.config = {
+  autoplay: 'on', unmuteOverlay: 'hidden', splashScreen: false,
+  letterbox: 'off', backgroundColor: '#3b3b3b', quality: 'best',
+  contextMenu: 'rightClickOnly', warnOnUnsupportedContent: false, allowScriptAccess: true
+};
+var player = window.RufflePlayer.newest().createPlayer();
+player.id = 'website';
+document.body.appendChild(player);
+/* Tells the work page to fade this frame in over its poster. */
+player.addEventListener('loadedmetadata', function () {
+  if (parent !== window) parent.postMessage('swf-ready', location.origin);
+});
+player.ruffle().load('website.swf');
+</script>
+</body>
+</html>

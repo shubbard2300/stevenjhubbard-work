@@ -35,14 +35,13 @@ SHOTS = [
     ("chrome",       None, "chromeindustries.com",  "20150301"),
     ("thismoment",   None, "thismoment.com",        "20140301"),
     ("urbanair",     None, "urbanairmarket.com",    "20130601"),
-    # eurorscg and horizon are Steven's own images (2026-09-22) -- not in SHOTS,
+    # eurorscg, horizon and madison are Steven's own images (2026-09-22) -- not in SHOTS,
     # because a re-shoot would replace them with a dead Flash page / empty shell.
     ("moss",         None, "mossoutdoor.com",       "20110301"),
     ("nflashback",   None, "nationalflashback.com", "20190825"),  # 2000-08 is Flash; this is the 2019 portfolio
     ("nimblefish",   None, "nimblefish.com",        "20050601"),
     ("puzzletheory", None, "puzzletheory.com",      "20110201"),  # earliest surviving
     ("irhythm",      None, "irhythmtech.com",       "20190601"),
-    ("digitalbrew",  None, "digitalbrewing.com",    "20090301"),
 ]
 
 

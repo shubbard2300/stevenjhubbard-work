@@ -253,28 +253,18 @@ figure{margin:0}
    mark and stops the screenshot from floating free of the page. */
 .shot::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent 55%);z-index:1}
 
-/* One site in this archive cannot be screenshotted at all: it was
-   Flash-only and no SWF survives. Rather than substitute a wrong image or a
-   later redesign, the slot states what is missing, in the same frame the
-   screenshots use. */
-.shot--gone{
-  display:grid;place-items:center;aspect-ratio:2000/1250;
-  background:
-    repeating-linear-gradient(0deg,transparent 0 47px,var(--line) 47px 48px),
-    repeating-linear-gradient(90deg,transparent 0 47px,var(--line) 47px 48px),
-    var(--ground-2);
-}
-.gone-in{text-align:center;padding:var(--gut);max-width:60ch}
-.gone-in .domain{
-  font-family:var(--mono);font-size:clamp(15px,2.4vw,30px);letter-spacing:.02em;
-  color:var(--ink-2);margin-bottom:18px;word-break:break-all;
-}
-.gone-in .why{font-size:clamp(14px,1.2vw,16.5px);color:var(--ink-3);line-height:1.55}
-.gone-in .tag{
-  display:inline-block;margin-bottom:22px;padding:5px 12px;border-radius:999px;
-  border:1px solid hsl(33 100% 66% / .35);background:hsl(33 100% 66% / .1);color:var(--signal);
+/* Madison Equities is the original SWF, not a capture: madison/ plays it in
+   Ruffle inside an iframe (SWFAddress rewrites its own window's hash and
+   title, so it must not share ours). The capture sits underneath as the
+   poster and stays visible until Ruffle reports the movie loaded. */
+.swf iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1;opacity:0;transition:opacity .6s}
+.swf.live iframe{opacity:1}
+.swf-play{
+  position:absolute;right:var(--gut);bottom:var(--gut);z-index:2;padding:7px 14px;border-radius:999px;
+  border:1px solid hsl(33 100% 66% / .35);background:hsl(222 33% 4% / .72);color:var(--signal);
   font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
 }
+.swf.live .swf-play{display:none}
 
 figcaption{
   max-width:var(--wrap);margin:0 auto;padding:16px var(--gut) 0;
@@ -476,12 +466,12 @@ figcaption{
   <div class="wrap">
     <span class="mono hi" style="--d:0s">Archive <span class="dot">&bull;</span> 2000 &mdash; 2026</span>
     <h1><span class="ln"><span>Everything</span></span><span class="ln"><span>I&rsquo;ve <em>shipped</em>.</span></span></h1>
-    <p class="lede hi" style="--d:.34s">Twenty-four engagements, in order. Each is shown as the site actually looked while I was working on it &mdash; pulled from the Wayback Machine where the original has since been redesigned, sold, or shut down. One of them cannot be shown at all: it was built in Flash, and nothing of it survives that a browser can open. That slot says so. It seemed more honest than a wall of logos.</p>
+    <p class="lede hi" style="--d:.34s">Twenty-four engagements, in order. Each is shown as the site actually looked while I was working on it &mdash; pulled from the Wayback Machine where the original has since been redesigned, sold, or shut down. One is not a screenshot at all: it was built in Flash, and it plays here from the original 2009 file, in an emulator. It seemed more honest than a wall of logos.</p>
     <div class="hero-foot hi" style="--d:.46s">
       <span class="stat"><b>24</b><span>Engagements</span></span>
       <span class="stat"><b>25</b><span>Years</span></span>
       <span class="stat"><b>11</b><span>Recovered from archive</span></span>
-      <span class="stat"><b>1</b><span>Lost to Flash</span></span>
+      <span class="stat"><b>1</b><span>Rescued from Flash</span></span>
     </div>
   </div>
 </section>
@@ -1268,53 +1258,49 @@ figcaption{
   </div>
 </article>
 
-<!-- ══ 17 · Digital Brewing ══════════════════════════════ -->
-<article class="entry" data-cat="development integration design">
+<!-- ══ 17 · Madison Equities ═════════════════════════════ -->
+<article class="entry" data-cat="design development">
   <div class="entry-head rv">
     <div>
       <div class="entry-no"><span class="mono">17</span><hr></div>
-      <h3>Digital Brewing Company</h3>
-      <p class="entry-role"><b>Front-End Developer</b> &middot; 2008 &ndash; 2009</p>
+      <h3>Madison Equities</h3>
+      <p class="entry-role"><b>Flash Designer &amp; Developer</b> &middot; 2009</p>
     </div>
-    <p class="lede">Campaign microsites and client builds for an agency roster.</p>
+    <p class="lede">The corporate site for a Manhattan real estate developer, built in Flash.</p>
   </div>
   <figure>
-    <div class="bleed">
-      <div class="shot--gone" role="img" aria-label="No usable archive capture of digitalbrewing.com survives. Flash">
-        <div class="gone-in">
-          <span class="tag">Flash &middot; no capture renders</span>
-          <p class="domain">digitalbrewing.com</p>
-          <p class="why">Archived at 4.8 KB: a Flash shell, no images, no markup. The agency built in Flash and the agency&rsquo;s own site was no exception. Nothing survives that a browser can draw.</p>
-        </div>
-      </div>
+    <div class="shot bleed swf">
+      <img src="assets/webp/madison.webp" srcset="assets/webp/madison@sm.webp 1000w, assets/webp/madison.webp 2000w" sizes="100vw" alt="The Madison Equities site in 2009: the serif Madison Equities logo over a menu reading New Developments, Development History, About Us, Press and Contact, two paragraphs of company copy on a cream panel, and a tall photograph of 875 Third Avenue, a black-framed glass tower, on the right." width="2000" height="1250" loading="lazy" decoding="async">
+      <a class="swf-play" href="madison/" target="_blank" rel="noopener">Play the original</a>
     </div>
     <figcaption class="rv">
-      <p class="cap-text">An agency that built in Flash, archived as a Flash shell. The campaign work behind it is gone the same way; microsites had a shelf life measured in quarters even before the runtime died.</p>
-      <p class="cap-src"><span class="badge arch">No capture</span> <a href="https://web.archive.org/web/2009/http://www.digitalbrewing.com/" target="_blank" rel="noopener">Archive record &middot; 2009</a></p>
+      <p class="cap-text">This is the site itself, not a screenshot: the April 2009 SWF, played through Ruffle, a Flash emulator. It starts when it scrolls into view, and the menu works.</p>
+      <p class="cap-src"><span class="badge arch">Own archive</span> <span>Original SWF &middot; 2009</span></p>
     </figcaption>
   </figure>
   <div class="entry-body">
     <div class="prose rv">
       <h4>Discovery</h4>
-      <p>Client campaign builds on agency timelines, each wired to third-party data sources that were rarely documented and never stable. Most of the scoping effort went into establishing what a given feed actually returned, as opposed to what its owner believed it returned.</p>
+      <p>A developer with forty years of Manhattan buildings behind it and nowhere to show them. The site had two jobs: sell new developments that mostly existed as renderings, and make the back catalogue, from the Excelsior in 1965 to the W Times Square, read as one body of work.</p>
+      <h4>Design</h4>
+      <p>A set of competing concepts &mdash; Classic, Clean Lines, Color Impact &mdash; before one comp was approved. The client&rsquo;s March notes asked for restraint: the cube-wipe transitions became fades, the type came down a point, and Development History became a timeline, each building placed on it by decade.</p>
       <h4>Development</h4>
-      <p>Front-end builds in XHTML/CSS and JavaScript across the roster. Performance work in 2008 was a different discipline from today&rsquo;s &mdash; no build tools worth the name, no HTTP/2, and a browser matrix that included IE6 whether anyone liked it or not &mdash; so most of the win came out of the markup itself.</p>
-      <h4>Integrations &amp; APIs</h4>
-      <p>Third-party data integration into the campaign builds, defensively written on the assumption the source would change without warning.</p>
+      <p>Flash 8 and ActionScript 2, with Tweener for the motion. Deep linking ran through SWFAddress, so every section had its own URL, the back button worked, and Google Analytics could count pages &mdash; none of which Flash did on its own. The stage scales to the window, with bitmap smoothing so the architectural photography held up at any size.</p>
       <h4>Outcomes</h4>
       <ul>
-        <li>Client campaign builds delivered across an agency roster</li>
-        <li>Third-party data integration</li>
-        <li>Front-end performance optimization</li>
+        <li>Launched April 2009</li>
+        <li>Deep-linked, analytics-tracked Flash site</li>
+        <li>Development history built as an interactive timeline</li>
+        <li>Still running today from the original SWF</li>
       </ul>
     </div>
     <div class="aside rv">
       <dl class="meta">
-        <div><dt>Role</dt><dd>Front-End Developer</dd></div>
-        <div><dt>Engagement</dt><dd>2008 &ndash; 2009</dd></div>
-        <div><dt>Discipline</dt><dd>Development &middot; Integration &middot; Design</dd></div>
+        <div><dt>Role</dt><dd>Flash Designer &amp; Developer</dd></div>
+        <div><dt>Engagement</dt><dd>2009</dd></div>
+        <div><dt>Discipline</dt><dd>Design &middot; Development</dd></div>
       </dl>
-      <div class="chips"><span>JavaScript</span><span>XHTML/CSS</span><span>Data integration</span></div>
+      <div class="chips"><span>Flash</span><span>ActionScript 2</span><span>SWFAddress</span><span>UI design</span><span>Analytics</span></div>
     </div>
   </div>
 </article>
@@ -1683,6 +1669,33 @@ figcaption{
   });
 
   var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Madison Equities: the SWF loads once, when half the frame is on screen,
+     so the intro plays in front of the reader rather than off-screen. With
+     reduced motion it waits for the play link instead. Ruffle's ~14 MB is
+     never fetched by anyone who doesn't scroll this far. */
+  document.querySelectorAll('.swf').forEach(function (shot) {
+    var link = shot.querySelector('.swf-play');
+    function play() {
+      if (shot.querySelector('iframe')) return;
+      var f = document.createElement('iframe');
+      f.src = link.getAttribute('href');
+      f.title = 'Madison Equities website, 2009 — the original Flash, running in Ruffle';
+      f.allow = 'autoplay';
+      shot.appendChild(f);
+    }
+    addEventListener('message', function (e) {
+      var f = shot.querySelector('iframe');
+      if (f && e.source === f.contentWindow && e.data === 'swf-ready') shot.classList.add('live');
+    });
+    link.addEventListener('click', function (e) { e.preventDefault(); play(); });
+    if (still) return;
+    var seen = new IntersectionObserver(function (rows) {
+      if (rows[0].isIntersecting) { seen.disconnect(); play(); }
+    }, {threshold: 0.5});
+    /* The figure, not the clipped .bleed -- same clip-path trap as above. */
+    seen.observe(shot.closest('figure'));
+  });
 
   /* Hero stats count up once, landing as the stats row finishes fading in. */
   if (!still) {

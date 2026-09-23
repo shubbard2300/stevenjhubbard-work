@@ -54,15 +54,23 @@ The most dangerous failure here is not a missing capture, it is a capture of the
 
 All three use the apex site's images instead. **Do not "fix" these by re-shooting them** — the capture will succeed and be wrong. They are removed from `SHOTS` with a comment saying why.
 
-### One that cannot be rendered
+### Flash, and what replaced the dead ends
 
-`digitalbrewing.com` was built entirely in Flash and archives as a few KB of SWF references with zero image elements.
+`digitalbrewing.com` was the one slot nothing could fill: Flash-only, no SWF archived. On 2026-09-22 the engagement was swapped out for **Madison Equities** (2009), whose original SWF Steven still had. It plays live on the page. See *Madison Equities* below.
 
-`horizonmedia.com` is a client-rendered application (34 KB of markup, forty-one script tags, no images) and was a `.shot--gone` block until 2026-09-22; it now shows Steven's own screenshot of the UnitedHealthcare homepage, a client property from that engagement (`horizon.webp`, badged *Own archive*).
+`horizonmedia.com` is a client-rendered application (34 KB of markup, forty-one script tags, no images). It shows Steven's own screenshot of the UnitedHealthcare homepage, a client property from that engagement (`horizon.webp`, badged *Own archive*).
 
-`eurorscg.com` was the same Flash dead end until 2026-09-22; it now shows a collage of Steven's own screenshots of the Flu Fighter HTML5 port (`eurorscg.webp`, badged *Own archive*). Both are removed from `SHOTS` so `capture.py` cannot overwrite them.
+`eurorscg.com` was a Flash dead end too. It shows a collage of Steven's own screenshots of the Flu Fighter HTML5 port (`eurorscg.webp`, badged *Own archive*). Both are removed from `SHOTS` so `capture.py` cannot overwrite them.
 
-It gets a `.shot--gone` block instead of an image: the domain, why nothing renders, and a link to the archive record. Substituting a later redesign would have been easy and dishonest.
+### Madison Equities
+
+`madison/` is the original April 2009 SWF (Flash 8, AS2) played in a self-hosted Ruffle 0.6, inside an iframe. It is an iframe because SWFAddress rewrites its window's hash and title. `index.html` adds the iframe the first time half the figure is on screen, so the intro plays in view. With reduced motion it waits for the *Play the original* link, and without JS that link opens `madison/` in a new tab. `assets/webp/madison.webp` is the poster under it, shot from the running SWF.
+
+Two vendored files are patched, because the CSP has no `'unsafe-eval'` (the only CSP change was adding `'wasm-unsafe-eval'` for Ruffle):
+- `madison/swfaddress.js`: `top` is replaced with `self`, and the three load-time `eval()` calls are rewritten.
+- `madison/ruffle/core.ruffle.*.js`: ExternalInterface.call built a `new Function`; it now walks the dotted name on `window`. Without this the SWF can't talk to SWFAddress and the menu goes dead under the production CSP.
+
+**Re-apply both patches after any Ruffle upgrade.** The source files are in `~/Documents/Clients/Madison Equities/deeplinking flash/`.
 
 `nationalflashback.com` was the fourth. Its 2000–2008 captures are Flash too, but the domain later carried Steven's own portfolio, so `nflashback.webp` is the August 2019 capture of that, and the caption says so rather than passing it off as the original.
 
