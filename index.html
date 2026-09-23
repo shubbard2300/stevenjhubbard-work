@@ -253,10 +253,10 @@ figure{margin:0}
    mark and stops the screenshot from floating free of the page. */
 .shot::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent 55%);z-index:1}
 
-/* Three sites in this archive cannot be screenshotted at all: two were
-   Flash-only and one is a client-rendered app whose archived JavaScript will
-   never hydrate. Rather than substitute a wrong image or a later redesign,
-   the slot states what is missing, in the same frame the screenshots use. */
+/* One site in this archive cannot be screenshotted at all: it was
+   Flash-only and no SWF survives. Rather than substitute a wrong image or a
+   later redesign, the slot states what is missing, in the same frame the
+   screenshots use. */
 .shot--gone{
   display:grid;place-items:center;aspect-ratio:2000/1250;
   background:
@@ -476,12 +476,12 @@ figcaption{
   <div class="wrap">
     <span class="mono hi" style="--d:0s">Archive <span class="dot">&bull;</span> 2000 &mdash; 2026</span>
     <h1><span class="ln"><span>Everything</span></span><span class="ln"><span>I&rsquo;ve <em>shipped</em>.</span></span></h1>
-    <p class="lede hi" style="--d:.34s">Twenty-four engagements, in order. Each is shown as the site actually looked while I was working on it &mdash; pulled from the Wayback Machine where the original has since been redesigned, sold, or shut down. Three of them cannot be shown at all: two were built in Flash, one is a JavaScript application whose archived code will never run again. Those slots say so. It seemed more honest than a wall of logos.</p>
+    <p class="lede hi" style="--d:.34s">Twenty-four engagements, in order. Each is shown as the site actually looked while I was working on it &mdash; pulled from the Wayback Machine where the original has since been redesigned, sold, or shut down. One of them cannot be shown at all: it was built in Flash, and nothing of it survives that a browser can open. That slot says so. It seemed more honest than a wall of logos.</p>
     <div class="hero-foot hi" style="--d:.46s">
       <span class="stat"><b>24</b><span>Engagements</span></span>
       <span class="stat"><b>25</b><span>Years</span></span>
       <span class="stat"><b>11</b><span>Recovered from archive</span></span>
-      <span class="stat"><b>3</b><span>Lost to Flash and JavaScript</span></span>
+      <span class="stat"><b>1</b><span>Lost to Flash</span></span>
     </div>
   </div>
 </section>
@@ -664,18 +664,12 @@ figcaption{
     <p class="lede">The corporate site and wider digital estate of the largest independent media agency in the US, plus the client platforms it runs.</p>
   </div>
   <figure>
-    <div class="bleed">
-      <div class="shot--gone" role="img" aria-label="No usable archive capture of horizonmedia.com survives. Client-rendered application">
-        <div class="gone-in">
-          <span class="tag">Client-rendered &middot; no capture renders</span>
-          <p class="domain">horizonmedia.com</p>
-          <p class="why">Captured in November 2024 at 34 KB: forty-one script tags and not a single image element. The archive kept the shell, but the JavaScript that draws the page will never run again against servers that are no longer there.</p>
-        </div>
-      </div>
+    <div class="shot bleed">
+      <img src="assets/webp/horizon.webp" srcset="assets/webp/horizon@sm.webp 1000w, assets/webp/horizon.webp 2000w" sizes="100vw" alt="The UnitedHealthcare homepage: the headline “Health plans for life’s moments” beside a photograph of a smiling mother hugging her daughter inside a sweeping navy ribbon, with “Member sign in” and “Shop for a plan” buttons, above four tiles for Medicare, Medicaid, Individual &amp; family and Employers." width="2000" height="1250" loading="lazy" decoding="async">
     </div>
     <figcaption class="rv">
-      <p class="cap-text">The most recent engagement in this archive and one of the least recoverable, which is less of a paradox than it sounds. A client-rendered site archives as an empty shell; the older the site, the likelier its HTML still stands alone.</p>
-      <p class="cap-src"><span class="badge arch">No capture</span> <a href="https://web.archive.org/web/2025/https://www.horizonmedia.com/" target="_blank" rel="noopener">Archive record &middot; 2025</a></p>
+      <p class="cap-text">UnitedHealthcare, one of the client properties audited for performance and accessibility &mdash; the half of the job that faced outward. Horizon&rsquo;s own site is client-rendered and archives as an empty shell, so this image is my own.</p>
+      <p class="cap-src"><span class="badge arch">Own archive</span> <span>Client property &middot; UnitedHealthcare</span></p>
     </figcaption>
   </figure>
   <div class="entry-body">
@@ -1196,18 +1190,12 @@ figcaption{
     <p class="lede">A branded game for a global advertising network, plus its companion iOS and Android apps.</p>
   </div>
   <figure>
-    <div class="bleed">
-      <div class="shot--gone" role="img" aria-label="No usable archive capture of eurorscg.com survives. Flash">
-        <div class="gone-in">
-          <span class="tag">Flash &middot; no capture renders</span>
-          <p class="domain">eurorscg.com</p>
-          <p class="why">The 2010 capture is six SWF files and no HTML to speak of. Flash has been dead since 2020, so nothing renders — which is a fitting artefact of a project whose whole brief was getting a game off Flash.</p>
-        </div>
-      </div>
+    <div class="shot bleed">
+      <img src="assets/webp/eurorscg.webp" srcset="assets/webp/eurorscg@sm.webp 1000w, assets/webp/eurorscg.webp 2000w" sizes="100vw" alt="Four screens from Flu Fighter, the HTML5 flu-symptom quiz game, pinned to a blurred blue board: the title screen with a feverish hand-drawn boy and a Play Game button, a timed question asking which is a common symptom of the flu, a “Good Job!” explanation panel, and a results screen reading “8/16 Correct!”." width="2000" height="1250" loading="lazy" decoding="async">
     </div>
     <figcaption class="rv">
-      <p class="cap-text">Nothing here survives in a form a browser can open. The agency&rsquo;s own site was Flash &mdash; a tidy irony, given the brief was porting their client&rsquo;s Flash game to HTML5 because phones had stopped playing it.</p>
-      <p class="cap-src"><span class="badge arch">No capture</span> <a href="https://web.archive.org/web/2011/http://eurorscg.com/" target="_blank" rel="noopener">Archive record &middot; 2011</a></p>
+      <p class="cap-text">Flu Fighter, after the port: title, a timed question, the feedback panel, the score. The agency&rsquo;s own site was Flash and never archived in a form a browser can open &mdash; a tidy irony, given the brief was getting this game off Flash because phones had stopped playing it. These screens are my own.</p>
+      <p class="cap-src"><span class="badge arch">Own archive</span> <span>HTML5 port &middot; 2011</span></p>
     </figcaption>
   </figure>
   <div class="entry-body">

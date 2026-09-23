@@ -40,7 +40,7 @@ python3 capture.py lexmark tivo
 
 ## Provenance
 
-Every image carries a badge saying where it came from — **Live**, **Archived**, **Own archive**, or **No capture**. The counts: 4 live, 10 archived, 6 carried over, 4 that cannot be rendered at all. They add to 24, and the hero stats are derived from the same tally.
+Every image carries a badge saying where it came from — **Live**, **Archived**, **Own archive**, or **No capture**. The counts (2026-09-22): 4 live, 11 archived, 8 own archive, 1 that cannot be rendered at all. They add to 24. The hero stats (**11** recovered, **1** lost) are typed by hand from this tally — recount the badges and update both when an image changes.
 
 ### Three domain collisions
 
@@ -54,11 +54,15 @@ The most dangerous failure here is not a missing capture, it is a capture of the
 
 All three use the apex site's images instead. **Do not "fix" these by re-shooting them** — the capture will succeed and be wrong. They are removed from `SHOTS` with a comment saying why.
 
-### Three that cannot be rendered
+### One that cannot be rendered
 
-Two sites were built entirely in Flash — `eurorscg.com` and `digitalbrewing.com` — and archive at 3–5 KB of SWF references with zero image elements. `horizonmedia.com` is a client-rendered application: 34 KB of markup, forty-one script tags, no images, and archived JavaScript that will never hydrate.
+`digitalbrewing.com` was built entirely in Flash and archives as a few KB of SWF references with zero image elements.
 
-These three get a `.shot--gone` block instead of an image: the domain, why nothing renders, and a link to the archive record. Substituting a later redesign would have been easy and dishonest.
+`horizonmedia.com` is a client-rendered application (34 KB of markup, forty-one script tags, no images) and was a `.shot--gone` block until 2026-09-22; it now shows Steven's own screenshot of the UnitedHealthcare homepage, a client property from that engagement (`horizon.webp`, badged *Own archive*).
+
+`eurorscg.com` was the same Flash dead end until 2026-09-22; it now shows a collage of Steven's own screenshots of the Flu Fighter HTML5 port (`eurorscg.webp`, badged *Own archive*). Both are removed from `SHOTS` so `capture.py` cannot overwrite them.
+
+It gets a `.shot--gone` block instead of an image: the domain, why nothing renders, and a link to the archive record. Substituting a later redesign would have been easy and dishonest.
 
 `nationalflashback.com` was the fourth. Its 2000–2008 captures are Flash too, but the domain later carried Steven's own portfolio, so `nflashback.webp` is the August 2019 capture of that, and the caption says so rather than passing it off as the original.
 
