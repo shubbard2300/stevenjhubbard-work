@@ -123,7 +123,7 @@ body{
   background:var(--ground);
   color:var(--ink);
   font-family:var(--body);
-  font-size:16px;
+  font-size:1rem;
   line-height:1.62;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
@@ -136,16 +136,16 @@ img{max-width:100%;display:block}
 
 /* ── Type primitives ─────────────────────────────────────── */
 .mono{
-  font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  font-family:var(--mono);font-size:0.6875rem;letter-spacing:.14em;
   text-transform:uppercase;color:var(--ink-3);font-weight:500;
 }
 .mono .dot{color:var(--accent)}
 h1,h2,h3,h4{font-family:var(--display);margin:0;text-wrap:balance;font-weight:800}
-h1{font-size:clamp(40px,7.5vw,104px);line-height:.92;letter-spacing:-.035em;font-variation-settings:"wdth" 112}
-h2{font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-.028em;font-variation-settings:"wdth" 108}
-h3{font-size:clamp(22px,2.6vw,34px);line-height:1.08;letter-spacing:-.022em;font-weight:800;font-variation-settings:"wdth" 106}
+h1{font-size:clamp(2.5rem,7.5vw,6.5rem);line-height:.92;letter-spacing:-.035em;font-variation-settings:"wdth" 112}
+h2{font-size:clamp(1.75rem,3.6vw,2.875rem);line-height:1;letter-spacing:-.028em;font-variation-settings:"wdth" 108}
+h3{font-size:clamp(1.375rem,2.6vw,2.125rem);line-height:1.08;letter-spacing:-.022em;font-weight:800;font-variation-settings:"wdth" 106}
 p{margin:0}
-.lede{font-size:clamp(16.5px,1.35vw,19px);color:var(--ink-2);max-width:62ch}
+.lede{font-size:clamp(1.03125rem,1.35vw,1.1875rem);color:var(--ink-2);max-width:62ch}
 strong{color:var(--ink);font-weight:600}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
@@ -162,18 +162,19 @@ section{position:relative}
 .nav{
   position:sticky;top:0;z-index:40;
   background:hsl(222 33% 4% / .82);
-  backdrop-filter:saturate(140%) blur(14px);
-  border-bottom:var(--rule);
+  -webkit-backdrop-filter:saturate(140%) blur(14px);backdrop-filter:saturate(140%) blur(14px);
+  /* A bright hairline reads as light catching the edge of the glass. */
+  border-bottom:1px solid hsl(0 0% 100% / .07);
 }
 .nav-in{
   max-width:var(--wrap);margin:0 auto;padding:14px var(--gut);
   display:flex;align-items:center;justify-content:space-between;gap:20px;
 }
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:-.01em}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:0.9375rem;letter-spacing:-.01em}
 .brand i{width:7px;height:7px;background:var(--accent);border-radius:1px;box-shadow:0 0 12px var(--accent-glow);font-style:normal}
 .brand span{color:var(--ink-3);font-weight:600}
 .nav-back{
-  font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  font-family:var(--mono);font-size:0.6875rem;letter-spacing:.13em;text-transform:uppercase;
   color:var(--ink-2);border:var(--rule);border-radius:999px;padding:7px 15px;
   transition:border-color .2s,color .2s,background .2s;white-space:nowrap;
 }
@@ -193,14 +194,20 @@ section{position:relative}
   margin-top:36px;padding-top:26px;border-top:var(--rule);
 }
 .stat{display:flex;flex-direction:column;gap:2px}
-.stat b{font-family:var(--display);font-size:clamp(26px,3.2vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1}
-.stat span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.stat b{font-family:var(--display);font-size:clamp(1.625rem,3.2vw,2.5rem);font-weight:800;letter-spacing:-.03em;line-height:1}
+.stat span{font-family:var(--mono);font-size:0.65625rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
 
 /* ── Filters ─────────────────────────────────────────────── */
 .filterbar{
-  position:sticky;top:53px;z-index:30;
-  background:hsl(222 33% 4% / .9);backdrop-filter:blur(12px);
-  border-block:var(--rule);
+  position:sticky;top:var(--nav-h,53px);z-index:30;
+  background:hsl(222 33% 4% / .9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-top:1px solid hsl(0 0% 100% / .05);
+}
+/* Scroll edge instead of a hard divider: content fades as it slides under
+   the bar rather than being cut off by a 1px line. */
+.filterbar::after{
+  content:"";position:absolute;left:0;right:0;top:100%;height:22px;pointer-events:none;
+  background:linear-gradient(hsl(222 33% 4% / .7),hsl(222 33% 4% / 0));
 }
 .filters{
   max-width:var(--wrap);margin:0 auto;padding:12px var(--gut);
@@ -208,7 +215,7 @@ section{position:relative}
 }
 .filters::-webkit-scrollbar{display:none}
 .filters button{
-  flex:0 0 auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+  flex:0 0 auto;font-family:var(--mono);font-size:0.65625rem;letter-spacing:.13em;
   text-transform:uppercase;color:var(--ink-3);background:transparent;
   border:var(--rule);border-radius:999px;padding:7px 14px;cursor:pointer;
   transition:color .2s,border-color .2s,background .2s;
@@ -232,7 +239,7 @@ section{position:relative}
 .entry-no .mono{color:var(--accent)}
 .entry-no hr{flex:1;border:0;border-top:var(--rule);margin:0}
 .entry-head h3{margin-bottom:10px}
-.entry-role{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-3)}
+.entry-role{font-family:var(--mono);font-size:0.71875rem;letter-spacing:.06em;color:var(--ink-3)}
 .entry-role b{color:var(--ink-2);font-weight:500}
 
 /* ── The screenshot ──────────────────────────────────────── */
@@ -262,7 +269,7 @@ figure{margin:0}
 .swf-play{
   position:absolute;right:var(--gut);bottom:var(--gut);z-index:2;padding:7px 14px;border-radius:999px;
   border:1px solid hsl(33 100% 66% / .35);background:hsl(222 33% 4% / .72);color:var(--signal);
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  font-family:var(--mono);font-size:0.65625rem;letter-spacing:.14em;text-transform:uppercase;
 }
 .swf.live .swf-play{display:none}
 
@@ -273,9 +280,9 @@ figcaption{
 @media (min-width:820px){
   figcaption{grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:32px}
 }
-.cap-text{font-size:14.5px;line-height:1.6;color:var(--ink-2);max-width:78ch}
+.cap-text{font-size:0.90625rem;line-height:1.6;color:var(--ink-2);max-width:78ch}
 .cap-src{
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  font-family:var(--mono);font-size:0.65625rem;letter-spacing:.1em;text-transform:uppercase;
   color:var(--ink-3);white-space:nowrap;display:flex;align-items:center;gap:8px;
 }
 .cap-src a{color:var(--ink-3);border-bottom:1px solid var(--line-2);transition:color .2s,border-color .2s}
@@ -295,10 +302,10 @@ figcaption{
 @media (min-width:980px){
   .entry-body{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(40px,5vw,84px)}
 }
-.prose{color:var(--ink-2);max-width:68ch;font-size:16.5px}
+.prose{color:var(--ink-2);max-width:68ch;font-size:1.03125rem}
 .prose p+p{margin-top:1.05em}
 .prose h4{
-  margin:1.9em 0 .5em;font-family:var(--mono);font-size:10.5px;font-weight:400;
+  margin:1.9em 0 .5em;font-family:var(--mono);font-size:0.65625rem;font-weight:400;
   letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
 }
 .prose h4:first-child{margin-top:0}
@@ -311,16 +318,16 @@ figcaption{
 .aside{display:grid;gap:22px;align-content:start}
 .meta{display:grid;gap:14px}
 .meta div{display:grid;gap:3px}
-.meta dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
-.meta dd{margin:0;font-size:15px;color:var(--ink)}
+.meta dt{font-family:var(--mono);font-size:0.65625rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.meta dd{margin:0;font-size:0.9375rem;color:var(--ink)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chips span{
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-2);
+  font-family:var(--mono);font-size:0.65625rem;letter-spacing:.06em;color:var(--ink-2);
   border:var(--rule);border-radius:4px;padding:4px 9px;background:var(--panel);
 }
 .visit{
   display:inline-flex;align-items:center;gap:8px;align-self:start;
-  font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  font-family:var(--mono);font-size:0.6875rem;letter-spacing:.13em;text-transform:uppercase;
   color:var(--ink);border:1px solid var(--line-2);border-radius:999px;padding:9px 17px;
   transition:border-color .2s,background .2s,color .2s;
 }
@@ -335,7 +342,7 @@ figcaption{
 .foot-fine{
   margin-top:44px;padding-top:22px;border-top:var(--rule);
   display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  font-family:var(--mono);font-size:0.65625rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
 }
 
 /* ── Reveal ──────────────────────────────────────────────── */
@@ -417,15 +424,15 @@ figcaption{
 .rail{
   position:fixed;left:14px;top:50%;z-index:35;translate:-12px -50%;
   display:none;flex-direction:column;gap:2px;padding:10px 6px;
-  background:hsl(222 33% 4% / .72);backdrop-filter:blur(12px);
-  border:var(--rule);border-radius:12px;
+  background:hsl(222 33% 4% / .72);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border:var(--rule);border-top-color:hsl(0 0% 100% / .08);border-radius:12px;
   opacity:0;pointer-events:none;transition:opacity .4s,translate .4s cubic-bezier(.22,1,.36,1);
 }
 .rail.on{opacity:1;translate:0 -50%;pointer-events:auto}
 @media (min-width:1280px) and (min-height:720px){.rail{display:flex}}
 .rail a{
   display:flex;align-items:center;gap:7px;padding:2px 7px;border-radius:6px;
-  font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--ink-3);
+  font-family:var(--mono);font-size:0.59375rem;letter-spacing:.1em;color:var(--ink-3);
   transition:color .2s,background .2s;
 }
 .rail a i{width:10px;height:1px;background:var(--line-2);transition:width .3s cubic-bezier(.22,1,.36,1),background .2s}
@@ -437,10 +444,77 @@ figcaption{
 .rail a[aria-current="true"] i{width:18px;background:var(--accent)}
 .rail a[hidden]{display:none}
 
+/* ── Press ──────────────────────────────────────────────────
+   Feedback lands on pointer-down, not on release. Scale is not vestibular
+   motion, so it stays on under reduced motion too. */
+.visit,.nav-back,.filters button,.swf-play,.viewer-close{transition:border-color .2s,color .2s,background .2s,scale .1s ease-out}
+.rail a{transition:color .2s,background .2s,scale .1s ease-out}
+.visit:active,.nav-back:active,.filters button:active,.swf-play:active,.viewer-close:active,.rail a:active{scale:.96}
+
+/* ── Filter pill ────────────────────────────────────────────
+   One highlight that springs between chips, drawn by script. Without
+   script the pressed chip carries its own border and fill, as before. */
+.filters{position:relative}
+.filters button{position:relative;z-index:1}
+.filters .pill{
+  position:absolute;left:0;top:0;border-radius:999px;pointer-events:none;
+  border:1px solid var(--accent);background:var(--accent-soft);will-change:transform;
+}
+.filters.pilled button[aria-pressed="true"]{border-color:transparent;background:transparent}
+
+/* ── Capture viewer ─────────────────────────────────────────
+   Each capture is a 2000px desktop page; on a phone it's shrunk past
+   reading. The viewer lifts it out at a readable size to drag around.
+   All motion is springs driven by script; see the viewer in the JS. */
+.shot-open{
+  position:absolute;inset:0;z-index:1;width:100%;padding:0;border:0;background:none;cursor:zoom-in;
+}
+.shot-open:focus-visible{outline-offset:-4px}
+.viewer{position:fixed;inset:0;z-index:80;opacity:0;touch-action:none;overscroll-behavior:contain;cursor:grab}
+.viewer.on{opacity:1}
+.viewer.grab{cursor:grabbing}
+.viewer[hidden]{display:none}
+.viewer-scrim{
+  position:absolute;inset:0;background:hsl(222 40% 3% / .86);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+}
+.viewer img{
+  position:absolute;left:0;top:0;max-width:none;transform-origin:0 0;will-change:transform;
+  box-shadow:0 40px 90px -30px #000,0 0 0 1px var(--line);user-select:none;-webkit-user-select:none;-webkit-user-drag:none;
+}
+.viewer-bar{
+  position:absolute;left:12px;right:12px;top:max(12px,env(safe-area-inset-top));z-index:1;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;pointer-events:none;
+}
+.viewer-hint,.viewer-close{
+  font-family:var(--mono);font-size:0.65625rem;letter-spacing:.13em;text-transform:uppercase;
+  border:var(--rule);border-top-color:hsl(0 0% 100% / .1);border-radius:999px;padding:7px 14px;
+  background:hsl(222 33% 4% / .72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+}
+.viewer-hint{color:var(--ink-3)}
+.viewer-close{color:var(--ink);cursor:pointer;pointer-events:auto}
+.viewer-close:hover{border-color:var(--accent);background:var(--accent-soft)}
+@media (max-width:560px){.viewer-hint{display:none}}
+@media (prefers-reduced-motion:reduce){.viewer{transition:opacity .2s}}
+
+/* ── Accessibility: transparency and contrast ───────────────
+   Reduced transparency makes the glass solid; more contrast also firms up
+   the rules and the dimmer text. */
+@media (prefers-reduced-transparency:reduce){
+  .nav,.filterbar,.rail,.viewer-hint,.viewer-close{background:var(--ground-2);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .viewer-scrim{background:var(--ground);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .filterbar::after{display:none}
+}
+@media (prefers-contrast:more){
+  :root{--line:#3A4A66;--line-2:#5A6D8F;--ink-2:#C9D2E0;--ink-3:#A6B2C6}
+  .nav,.filterbar,.rail,.viewer-hint,.viewer-close{background:var(--ground);-webkit-backdrop-filter:none;backdrop-filter:none;border-color:var(--line-2)}
+  .filterbar::after{display:none}
+}
+
 /* ── Print ───────────────────────────────────────────────── */
 @media print{
   :root{--ground:#fff;--ink:#111;--ink-2:#333;--ink-3:#666;--line:#ccc;--line-2:#999;--accent:#0645AD;--panel:#fff}
-  .nav,.filterbar,.progress,.visit,.rail{display:none}
+  .nav,.filterbar,.progress,.visit,.rail,.viewer,.shot-open{display:none}
   .entry figure>.bleed{clip-path:none!important}
   .entry figure>.bleed::after{display:none}
   .shot img{scale:1!important;translate:none!important;animation:none!important}
@@ -1670,6 +1744,239 @@ figcaption{
 
   var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* iOS Safari only applies :active when the page has a touch listener. */
+  addEventListener('touchstart', function () {}, {passive: true});
+
+  /* The filter bar sticks under the nav, whose height follows the reader's
+     text size now that type is in rem. */
+  var nav = document.querySelector('.nav');
+  function navH() { document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px'); }
+  navH();
+  addEventListener('resize', navH);
+  if (document.fonts) document.fonts.ready.then(navH);
+
+  /* Spring, in Apple's two designer terms rather than mass/stiffness:
+     z = damping ratio (1 = no overshoot), r = response in seconds. go()
+     re-targets from the live value and keeps the current velocity, so a
+     spring can be grabbed or redirected mid-flight without a jump or a
+     velocity "brick wall". Reduced motion lands every spring instantly. */
+  function Spring(x, on, eps) { this.x = this.to = x; this.v = 0; this.on = on; this.eps = eps || .3; this.raf = 0; }
+  Spring.prototype.stop = function () { cancelAnimationFrame(this.raf); this.raf = 0; };
+  Spring.prototype.set = function (x) { this.stop(); this.x = this.to = x; this.v = 0; this.on(); };
+  Spring.prototype.go = function (to, o) {
+    o = o || {};
+    var s = this, last = null;
+    s.to = to; s.z = o.z || 1; s.r = o.r || .4;
+    if (o.v !== undefined) s.v = o.v;
+    if (still || o.jump) { s.set(to); return; }
+    if (s.raf) return;
+    s.raf = requestAnimationFrame(function step(t) {
+      var dt = last === null ? 1 / 60 : Math.min((t - last) / 1000, 1 / 30);
+      var k = Math.pow(2 * Math.PI / s.r, 2), c = 4 * Math.PI * s.z / s.r, h = dt / 4;
+      last = t;
+      for (var n = 0; n < 4; n++) { s.v += (-k * (s.x - s.to) - c * s.v) * h; s.x += s.v * h; }
+      if (Math.abs(s.x - s.to) < s.eps && Math.abs(s.v) < s.eps * 10) { s.x = s.to; s.v = 0; s.raf = 0; }
+      else s.raf = requestAnimationFrame(step);
+      s.on();
+    });
+  };
+
+  /* Filter pill: one highlight that travels to the chosen chip. */
+  var filterRow = document.querySelector('.filters');
+  var pill = document.createElement('span');
+  pill.className = 'pill';
+  filterRow.insertBefore(pill, filterRow.firstChild);
+  filterRow.classList.add('pilled');
+  function drawPill() { pill.style.transform = 'translateX(' + PX.x + 'px)'; pill.style.width = PW.x + 'px'; }
+  var PX = new Spring(0, drawPill), PW = new Spring(0, drawPill);
+  function aimPill(btn, jump) {
+    pill.style.top = btn.offsetTop + 'px';
+    pill.style.height = btn.offsetHeight + 'px';
+    PX.go(btn.offsetLeft, {r: .35, jump: jump});
+    PW.go(btn.offsetWidth, {r: .35, jump: jump});
+  }
+  function pressed() { return filterRow.querySelector('[aria-pressed="true"]'); }
+  aimPill(pressed(), true);
+  addEventListener('resize', function () { aimPill(pressed(), true); });
+  if (document.fonts) document.fonts.ready.then(function () { aimPill(pressed(), true); });
+
+  /* ── Capture viewer ──────────────────────────────────────────
+     Tap a capture and it lifts out of its frame to a readable size (at
+     least the viewport, up to 1400px wide). Drag tracks 1:1 from where you
+     grabbed; release hands the finger's velocity to the springs and aims
+     them at where the flick was going, not where it let go. Edges
+     rubber-band. Pull down past the top edge and it flies back into its
+     frame, still carrying the flick. Everything is interruptible. */
+  var viewer = document.createElement('div');
+  viewer.className = 'viewer';
+  viewer.hidden = true;
+  viewer.setAttribute('role', 'dialog');
+  viewer.setAttribute('aria-modal', 'true');
+  viewer.setAttribute('aria-label', 'Screenshot viewer');
+  viewer.innerHTML = '<div class="viewer-scrim"></div><img alt="" draggable="false">' +
+    '<div class="viewer-bar"><span class="viewer-hint">Drag to look around &middot; pull down to close</span>' +
+    '<button type="button" class="viewer-close">Close &times;</button></div>';
+  document.body.appendChild(viewer);
+  var vImg = viewer.querySelector('img'), scrim = viewer.querySelector('.viewer-scrim');
+  var vBar = viewer.querySelector('.viewer-bar'), vClose = viewer.querySelector('.viewer-close');
+
+  function drawViewer() {
+    vImg.style.transform = 'translate3d(' + VX.x + 'px,' + VY.x + 'px,0) scale(' + VS.x + ')';
+    scrim.style.opacity = clamp(VO.x, 0, 1);
+    /* The controls leave first, so they never float over the page behind. */
+    vBar.style.opacity = clamp((VO.x - .6) / .4, 0, 1);
+    if (state === 'closing' && !VX.raf && !VY.raf && !VS.raf && !VO.raf) finish();
+  }
+  var VX = new Spring(0, drawViewer), VY = new Spring(0, drawViewer);
+  var VS = new Spring(1, drawViewer, .0005), VO = new Spring(0, drawViewer, .002);
+
+  var state = 'shut', src = null, W = 0, H = 0, B = {};
+  /* Apple's scroll-deceleration projection: how far a flick coasts. */
+  function project(v) { return (v / 1000) * .998 / (1 - .998); }
+  /* Progressive resistance past an edge, and its inverse (to regrab a
+     capture mid-bounce without it jumping). */
+  function rubber(o, d) { return (o * d * .55) / (d + .55 * Math.abs(o)); }
+  function unrubber(f, d) { return f * d / (.55 * (d - Math.abs(f))); }
+  function band(v, lo, hi, d) { return v < lo ? lo - rubber(lo - v, d) : v > hi ? hi + rubber(v - hi, d) : v; }
+  function unband(v, lo, hi, d) { return v < lo ? lo - unrubber(lo - v, d) : v > hi ? hi + unrubber(v - hi, d) : v; }
+  /* Vertical is the same except past the top: pulling down is the dismiss
+     gesture, so there the capture follows the finger 1:1 instead. */
+  function bandY(v) { return v > B.y1 ? v : band(v, B.y0, B.y1, B.vh); }
+  function unbandY(v) { return v > B.y1 ? v : unband(v, B.y0, B.y1, B.vh); }
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+  function layout() {
+    var vw = innerWidth, vh = innerHeight;
+    var nw = +src.getAttribute('width'), nh = +src.getAttribute('height');
+    W = Math.max(vw, Math.min(nw, 1400));
+    H = W * nh / nw;
+    vImg.style.width = W + 'px';
+    vImg.style.height = H + 'px';
+    B = {x0: vw - W, x1: 0, y0: H > vh ? vh - H : (vh - H) / 2, y1: H > vh ? 0 : (vh - H) / 2, vw: vw, vh: vh};
+  }
+  function home() { var r = src.getBoundingClientRect(); return {x: r.left, y: r.top, s: r.width / W}; }
+
+  function open(img) {
+    src = img;
+    var set = img.getAttribute('srcset') || '';
+    var urls = set.split(',').map(function (c) { return c.trim().split(/\s+/)[0]; });
+    vImg.src = urls[urls.length - 1] || img.currentSrc || img.src;
+    vImg.alt = img.alt;
+    viewer.hidden = false;
+    layout();
+    var h = home();
+    VX.set(h.x); VY.set(h.y); VS.set(h.s); VO.set(0);
+    src.style.visibility = 'hidden';
+    state = 'open';
+    void viewer.offsetWidth; /* commit opacity:0 so reduced motion can fade in */
+    viewer.classList.add('on');
+    VX.go((B.x0 + B.x1) / 2); VY.go(B.y1); VS.go(1); VO.go(1);
+    vClose.focus({preventScroll: true});
+  }
+  function close(vx, vy) {
+    if (state !== 'open') return;
+    state = 'closing';
+    if (still) { viewer.classList.remove('on'); setTimeout(finish, 200); return; }
+    var h = home();
+    VX.go(h.x, {v: vx || 0}); VY.go(h.y, {v: vy || 0}); VS.go(h.s); VO.go(0);
+  }
+  function finish() {
+    if (state !== 'closing') return;
+    state = 'shut';
+    viewer.classList.remove('on');
+    viewer.hidden = true;
+    src.style.visibility = '';
+    var btn = src.parentNode.querySelector('.shot-open');
+    if (btn) btn.focus({preventScroll: true});
+  }
+
+  /* Drag. A short position history gives the release velocity. */
+  var drag = null;
+  viewer.addEventListener('pointerdown', function (e) {
+    if (state === 'shut' || e.target.closest('button')) return;
+    if (state === 'closing') { state = 'open'; VS.go(1); VO.go(1); }
+    VX.stop(); VY.stop();
+    viewer.setPointerCapture(e.pointerId);
+    viewer.classList.add('grab');
+    drag = {
+      id: e.pointerId, px: e.clientX, py: e.clientY, moved: false,
+      /* Where the capture actually is, un-banded, so the grab respects the
+         offset from the finger and a mid-bounce grab doesn't jump. */
+      x: unband(VX.x, B.x0, B.x1, B.vw), y: unbandY(VY.x),
+      hist: [{x: e.clientX, y: e.clientY, t: e.timeStamp}]
+    };
+  });
+  viewer.addEventListener('pointermove', function (e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    var dx = e.clientX - drag.px, dy = e.clientY - drag.py;
+    if (!drag.moved && Math.hypot(dx, dy) < 10) return; /* hysteresis */
+    drag.moved = true;
+    VX.set(band(drag.x + dx, B.x0, B.x1, B.vw));
+    VY.set(bandY(drag.y + dy));
+    /* Pulling down past the top dims the scrim, hinting at the dismiss. */
+    VO.set(1 - clamp((VY.x - B.y1) / (B.vh * .6), 0, .7));
+    drag.hist.push({x: e.clientX, y: e.clientY, t: e.timeStamp});
+    while (drag.hist.length > 2 && e.timeStamp - drag.hist[0].t > 100) drag.hist.shift();
+  });
+  function release(e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    var d = drag, a = d.hist[0], b = d.hist[d.hist.length - 1], dt = (b.t - a.t) / 1000;
+    drag = null;
+    viewer.classList.remove('grab');
+    if (!d.moved) { if (e.type === 'pointerup') close(0, 0); return; } /* a tap closes */
+    var vx = dt > 0 ? (b.x - a.x) / dt : 0, vy = dt > 0 ? (b.y - a.y) / dt : 0;
+    /* Stale history means the finger stopped before lifting: no flick. */
+    if (e.timeStamp - b.t > 80) vx = vy = 0;
+    var pull = VY.x - B.y1;
+    if (pull > 0 && pull + project(vy) > B.vh * .22 && vy >= 0) { close(vx, vy); return; }
+    VO.go(1);
+    VX.go(clamp(VX.x + project(vx), B.x0, B.x1), {v: vx, r: .55});
+    VY.go(clamp(VY.x + project(vy), B.y0, B.y1), {v: vy, r: .55});
+  }
+  viewer.addEventListener('pointerup', release);
+  viewer.addEventListener('pointercancel', release);
+
+  /* Trackpads and wheels already carry their own momentum: follow 1:1. */
+  viewer.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    if (state !== 'open') return;
+    VX.set(clamp(VX.x - e.deltaX, B.x0, B.x1));
+    VY.set(clamp(VY.x - e.deltaY, B.y0, B.y1));
+  }, {passive: false});
+
+  vClose.addEventListener('click', function () { close(0, 0); });
+  addEventListener('keydown', function (e) {
+    if (state !== 'open') return;
+    var step = {ArrowLeft: [160, 0], ArrowRight: [-160, 0], ArrowUp: [0, 160], ArrowDown: [0, -160]}[e.key];
+    if (e.key === 'Escape') close(0, 0);
+    else if (e.key === 'Tab') vClose.focus();
+    else if (step) {
+      VX.go(clamp(VX.to + step[0], B.x0, B.x1));
+      VY.go(clamp(VY.to + step[1], B.y0, B.y1));
+    } else return;
+    e.preventDefault();
+  });
+  addEventListener('resize', function () {
+    if (state !== 'open') return;
+    layout();
+    VX.set(clamp(VX.x, B.x0, B.x1)); VY.set(clamp(VY.x, B.y0, B.y1));
+  });
+
+  /* One transparent button over each capture, so the image keeps its alt
+     text and the viewer is reachable by keyboard. Not Madison: the live
+     SWF takes its own clicks. */
+  document.querySelectorAll('.shot:not(.swf)').forEach(function (shot) {
+    var img = shot.querySelector('img');
+    var name = shot.closest('.entry').querySelector('h3').textContent.trim();
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'shot-open';
+    b.setAttribute('aria-label', 'Enlarge the ' + name + ' screenshot');
+    b.setAttribute('aria-haspopup', 'dialog');
+    b.addEventListener('click', function () { if (state === 'shut') open(img); });
+    shot.appendChild(b);
+  });
+
   /* Madison Equities: the SWF loads once, when half the frame is on screen,
      so the intro plays in front of the reader rather than off-screen. With
      reduced motion it waits for the play link instead. Ruffle's ~14 MB is
@@ -1759,6 +2066,7 @@ figcaption{
     btn.addEventListener('click', function () {
       var f = btn.dataset.f;
       buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      aimPill(btn);
       function apply() {
         entries.forEach(function (e, i) {
           e.hidden = !(f === 'all' || e.dataset.cat.indexOf(f) !== -1);
